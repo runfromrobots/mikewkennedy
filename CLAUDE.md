@@ -40,7 +40,7 @@ DEPLOY.md                deployment notes (Netlify/GitHub Pages/Vercel)
 * Repo: https://github.com/runfromrobots/mikewkennedy
 * Currently deployed via GitHub Pages (Settings → Pages → branch `main`, folder `/root`) at https://runfromrobots.github.io/mikewkennedy/
 * Also connected to Vercel for auto-deploy on every push to `main`
-* Custom domain mikewkennedy.com currently points at a different, existing live site. Do NOT touch that domain's DNS or treat this repo as live-facing until explicitly told the switch is happening.
+* Custom domain mikewkennedy.com is being switched over to this site: the site owner has added the domain in Vercel and created the A/CNAME records with Squarespace (the domain's registrar/DNS host). This repo is now the live-facing site for that domain (previously it pointed at a separate, unrelated site) — DNS changes were made by the site owner directly in the Vercel and Squarespace dashboards, not through this repo.
 
 ## Content status — what's real vs. placeholder
 
