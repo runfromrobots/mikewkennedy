@@ -22,8 +22,9 @@ DEPLOY.md                deployment notes (Netlify/GitHub Pages/Vercel)
 
 * Colors: navy `#0A2540` (primary), teal `#1F8A82` / teal-deep `#146760` (accent), paper `#F7F5F0` (background), see `:root` in styles.css for full token list
 * Type: Fraunces (display/headlines), Inter (body), IBM Plex Mono (labels, dates, eyebrows, tags)
-* Signature visual: an animated "signal convergence" SVG in the hero, representing multiple research data sources (interviews, surveys, analytics, field notes) converging into one insight — a nod to mixed-methods synthesis
+* Signature visual: an animated "signal convergence" SVG in the hero, representing multiple research data sources (interviews, surveys, analytics, field notes) converging into one insight — a nod to mixed-methods synthesis. The hero photo now sits at the convergence point, replacing the abstract node with an actual portrait.
 * Keep all new sections consistent with this system rather than introducing new colors/fonts
+* Spacing, small-text sizing, and breakpoints are systematized on the Carbon Design System (github.com/carbon-design-system) scale — CSS custom properties prefixed `--cds-` in `:root` (spacing-01 through 13, a handful of type-scale steps, a motion duration/easing pair). This is a token-level adoption only ("Option A"): brand colors (navy/teal/paper), Fraunces/Inter/Plex Mono fonts, and the signature SVG are unchanged — deliberately not a full swap to literal Carbon components/theme, which would clash with the site's personal-portfolio identity. Breakpoints follow Carbon's md (672px) and lg (1056px). When adding new spacing/gaps, reach for a `--cds-spacing-*` token instead of a new hardcoded px value.
 
 ## Deployment
 
