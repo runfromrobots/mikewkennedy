@@ -1129,3 +1129,55 @@ body::after {
 .link-cta:hover {
   animation: glitch-flicker 0.25s steps(2, end) 1;
 }
+
+/* ============================================
+   Site banner (points to the "how this site was made" write-up)
+   ============================================ */
+.site-banner {
+  position: fixed;
+  left: var(--cds-spacing-05);
+  bottom: var(--cds-spacing-05);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: var(--cds-spacing-04);
+  max-width: 360px;
+  background: rgba(18, 20, 27, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--teal);
+  border-radius: var(--radius);
+  box-shadow: 0 0 24px rgba(34, 229, 255, 0.2);
+  padding: var(--cds-spacing-04) var(--cds-spacing-05);
+}
+.site-banner-link {
+  font-family: var(--font-mono);
+  font-size: var(--cds-caption-01);
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.site-banner-link:hover { color: var(--teal-deep); }
+.site-banner-close {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-banner-close:hover { color: var(--ink); border-color: var(--teal); }
+
+@media (max-width: 672px) {
+  .site-banner {
+    left: var(--cds-spacing-04);
+    right: var(--cds-spacing-04);
+    max-width: none;
+  }
+}

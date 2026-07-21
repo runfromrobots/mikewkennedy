@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How This Site Was Built — Michael Kennedy</title>
+<meta name="description" content="A plain-English walkthrough of building this site by talking to Claude Code, syncing it to GitHub, and deploying it live on Vercel.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="header-content">
+      <span class="brand-spacer" aria-hidden="true"></span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#log">Experience</a>
+        <a href="index.html#toolkit">Toolkit</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+    <a href="index.html" class="brand">MK</a>
+  </div>
+  <a class="btn btn-secondary btn-header" href="mailto:mikewkennedy@gmail.com">Get in touch</a>
+</header>
+
+<main id="main">
+
+  <section class="section cs-hero">
+    <div class="wrap">
+      <p class="cs-tag">Behind the site &middot; Not a case study, just notes</p>
+      <h1 class="cs-title">How This Site Was Built by Just Talking to Claude</h1>
+      <p class="cs-subtitle">A plain-English walkthrough of the tools behind this site: syncing code to GitHub, what's actually being paid for, and deploying it live on Vercel. Written for anyone curious enough to try it themselves, no coding background required.</p>
+      <a class="link-cta cs-back" href="index.html">&larr; Back to the site</a>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>The short version</h2>
+      <p>Every redesign, every case study, every button color on this site was built by describing what I wanted in plain conversation to Claude Code, Anthropic's coding assistant. I didn't write any code by hand. The loop was simple: describe what I wanted, Claude wrote the actual HTML, CSS, and JavaScript, I looked at the result and asked for changes, and we repeated that until it was right.</p>
+      <p>Three tools made the finished result possible: a place to store the code (GitHub), a way to talk to an AI that can edit it directly (Claude Code), and a service that takes that code and turns it into a live website (Vercel). Here's what each of those actually means.</p>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>GitHub, in plain English</h2>
+      <p>Think of GitHub as a shared, versioned folder for a project's code. Every change gets saved as a "commit," a labeled snapshot you can always go back to if something breaks. "Pushing" a commit sends it up to GitHub, where it's stored safely and can be picked up by other tools, like the hosting service that publishes the live site.</p>
+      <p>Claude Code can create that GitHub repository, save changes to it directly, and keep a running history of every edit, all without me ever typing a git command myself. The practical upside: nothing is ever really lost, and once the repository is connected to a hosting service, new commits can turn into live updates automatically.</p>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>What this actually costs</h2>
+      <p>Being upfront about the money, since this is usually the first question: building this site didn't require any special enterprise tooling. Claude Code is included with a Claude Pro subscription. Since most of the work on a personal site happens in a short, concentrated burst rather than needing constant attention, the goal going in was to get the whole build done inside a single month of that subscription, then cancel it once the work was finished.</p>
+      <p>Compare that to a recurring monthly website builder subscription (in my case, Wix), which keeps charging every month whether or not any changes are actually being made. If a site doesn't need constant hands-on tinkering, one focused month of Claude Code can replace a much longer running subscription, especially once the code lives somewhere like GitHub and Vercel, both of which are free for a personal site at this scale.</p>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>Vercel, in plain English</h2>
+      <p>Vercel is a hosting service built for exactly this workflow: point it at a GitHub repository, and every time new code is pushed there, Vercel automatically rebuilds and republishes the live site. No manual uploading, no FTP, no clicking "publish" anywhere.</p>
+      <p>A few things worth knowing if you're new to it:</p>
+      <ul class="cs-process-list">
+        <li>It has a generous free tier that comfortably covers a personal site like this one</li>
+        <li>It provisions free HTTPS (the padlock icon in the address bar) automatically, with no setup required</li>
+        <li>A custom domain can be pointed at a Vercel project through your domain registrar's DNS settings, and Vercel handles the certificate for it</li>
+        <li>Every push to the main branch triggers a new deployment, usually live within a minute or two, and Vercel keeps a history of every deployment in case something ever needs to be rolled back</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>If you want to try this yourself</h2>
+      <p>You don't need a coding background to follow this same path. The rough sequence:</p>
+      <ol class="cs-process-list">
+        <li>Ask Claude Code to set up a project and a GitHub repository for it</li>
+        <li>Describe the site you want in your own words, and let Claude write and revise the actual code</li>
+        <li>Ask Claude to push the code to GitHub, something as simple as saying "push this to GitHub" works</li>
+        <li>Connect that GitHub repository to a new Vercel project, either through Vercel's own dashboard or by asking Claude to walk you through the steps</li>
+        <li>From then on, any time you want a change, just describe it in plain language. Once Claude pushes the update to GitHub, Vercel takes care of the rest on its own</li>
+      </ol>
+      <p>That's really the whole idea: a conversation in, a live website out.</p>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <p class="cs-reflection">None of this required knowing how to code going in. It required knowing what the finished site should look and feel like, and being willing to describe that clearly, over and over, until it matched.</p>
+      <div class="cs-nav-footer">
+        <a class="link-cta" href="index.html">&larr; Back to the site</a>
+        <a class="link-cta" href="case-studies/">See the case studies &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-quote-wrap">
+    <p class="footer-quote">&ldquo;Peel a Sticky-note sideways and it will always lie flat.&rdquo; &mdash; C. Todd Lombardo</p>
+  </div>
+  <div class="wrap footer-inner">
+    <span>&copy; <span id="year"></span> Michael Kennedy</span>
+    <span>Upstate NY &middot; Remote</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
