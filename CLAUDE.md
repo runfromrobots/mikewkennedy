@@ -52,6 +52,7 @@ Real:
 * images/unplaced/ holds three more real photos (ibm-research.jpg, collaborative-laptop.jpg, home-office-dog.jpg) with no page placement decided yet — ask the site owner before using any of them
 * Favicon (images/favicon.png) — real square photo, wired via `<link rel="icon">` / `<link rel="apple-touch-icon">` in both index.html and case-studies/index.html
 * The blazer/window photo (images/headshot.jpg) is the confirmed final headshot choice — don't swap it for other candidate photos without being asked
+* LinkedIn feed (Juicer.io embed, `#linkedin` section between Testimonials and Contact) — deliberately de-emphasized (smaller muted heading, narrower/shorter container, no primary nav link) per the site owner's request that it read as secondary. Juicer's own bundled CSS styles the feed cards themselves (not matched to this site's design system) and free-tier Juicer may show its own branding on the widget.
 
 Still placeholder — do not treat as final content:
 
