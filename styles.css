@@ -803,23 +803,176 @@ a.case-card:hover { border-color: var(--teal); }
   max-width: 70ch;
 }
 
-.cs-figure { margin: var(--cds-spacing-07) 0; }
-.cs-figure img {
-  width: 100%;
+.cs-figure { margin: var(--cds-spacing-07) 0; text-align: center; }
+.cs-figure-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.cs-figure-frame img {
+  max-height: 650px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   display: block;
+  filter: blur(3px) saturate(0.6) brightness(0.75);
+}
+.cs-figure-hero .cs-figure-frame img { max-height: 900px; }
+.cs-figure-small .cs-figure-frame img { max-height: 180px; }
+.cs-figure-small .cs-figure-frame::before {
+  font-size: 0.625rem;
+  padding: var(--cds-spacing-02) var(--cds-spacing-03);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
 }
 .cs-figure figcaption {
   margin-top: var(--cds-spacing-03);
   font-family: var(--font-mono);
   font-size: var(--cds-caption-01);
   color: var(--ink-soft);
+  text-align: center;
 }
 .cs-figure-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--cds-spacing-06);
+}
+
+/* Obscured treatment: case study visuals are blurred and labeled, real
+   detail is discussed in conversation rather than published at full clarity.
+   The badge centers on the image frame only (not the caption below it), so
+   it needs its own positioning box distinct from .cs-figure/.cs-carousel-slide. */
+.cs-figure-frame::before,
+.cs-carousel-frame::before {
+  content: 'Full detail shown in conversation';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: var(--cds-caption-01);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: rgba(8, 9, 13, 0.75);
+  border: 1px solid var(--teal);
+  padding: var(--cds-spacing-03) var(--cds-spacing-05);
+  border-radius: 999px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  width: max-content;
+  max-width: 85%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ============================================
+   Case study image carousel
+   ============================================ */
+.cs-carousel {
+  position: relative;
+  margin: var(--cds-spacing-07) 0;
+}
+.cs-carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.cs-carousel-track {
+  display: flex;
+  transition: transform var(--cds-duration-fast-02) var(--cds-easing-standard);
+}
+.cs-carousel-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--cds-spacing-06) 0;
+  text-align: center;
+}
+.cs-carousel-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.cs-carousel-frame img {
+  max-height: 650px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  filter: blur(3px) saturate(0.6) brightness(0.75);
+}
+.cs-carousel-caption {
+  margin: var(--cds-spacing-04) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--cds-caption-01);
+  color: var(--ink-soft);
+  text-align: center;
+}
+.cs-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--teal);
+  background: rgba(8, 9, 13, 0.75);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--cds-duration-fast-02) var(--cds-easing-standard);
+}
+.cs-carousel-btn:hover { background: var(--accent-purple); }
+.cs-carousel-prev { left: var(--cds-spacing-04); }
+.cs-carousel-next { right: var(--cds-spacing-04); }
+.cs-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--cds-spacing-03);
+  margin-top: var(--cds-spacing-04);
+}
+.cs-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--teal);
+  background: transparent;
+  cursor: pointer;
+}
+.cs-carousel-dot.is-active { background: var(--teal-deep); }
+.cs-carousel-counter {
+  font-family: var(--font-mono);
+  font-size: var(--cds-caption-01);
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: var(--cds-spacing-02);
+}
+
+@media (max-width: 672px) {
+  .cs-carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
+  .cs-figure-frame::before,
+  .cs-carousel-frame::before {
+    font-size: 0.625rem;
+    padding: var(--cds-spacing-02) var(--cds-spacing-03);
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
 }
 
 .cs-decisions {
