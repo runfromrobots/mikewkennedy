@@ -12,6 +12,8 @@
   --line: #DCD7C9;
   --ink: #1B1B18;
   --ink-soft: #55584F;
+  --heading: var(--navy);
+  --header-bg: rgba(247, 245, 240, 0.88);
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,6 +51,23 @@
   /* Carbon breakpoints: sm 320 / md 672 / lg 1056 / xlg 1312 / max 1584 */
 }
 
+/* Dark theme: Carbon's g100 surface/text structure (background, layer,
+   text-primary, text-secondary, border-subtle) applied to this site's
+   own palette — brand navy/teal are kept, not swapped for Carbon blue. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161616;
+    --paper-raised: #262626;
+    --line: #393939;
+    --ink: #F4F4F4;
+    --ink-soft: #C6C6C6;
+    --heading: #F4F4F4;
+    --header-bg: rgba(22, 22, 22, 0.88);
+    --teal-deep: #4FBEB0;
+    --teal-tint: rgba(31, 138, 130, 0.18);
+  }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -68,7 +87,7 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  color: var(--navy);
+  color: var(--heading);
   margin: 0 0 0.4em;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -114,7 +133,7 @@ a { color: var(--teal-deep); }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(247, 245, 240, 0.88);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -196,17 +215,17 @@ a { color: var(--teal-deep); }
 .btn-primary:hover { background: var(--teal-deep); }
 
 .btn-outline {
-  border-color: var(--navy);
-  color: var(--navy);
+  border-color: var(--heading);
+  color: var(--heading);
 }
-.btn-outline:hover { background: var(--navy); color: #fff; }
+.btn-outline:hover { background: var(--heading); color: var(--paper); }
 
 .btn-ghost {
-  color: var(--navy);
+  color: var(--heading);
   text-decoration: none;
   border: 1px solid var(--line);
 }
-.btn-ghost:hover { border-color: var(--navy); }
+.btn-ghost:hover { border-color: var(--heading); }
 
 /* ============================================
    Hero
@@ -282,14 +301,14 @@ a { color: var(--teal-deep); }
 }
 
 .signal-node {
-  fill: var(--navy);
+  fill: var(--heading);
   stroke: var(--teal);
   stroke-width: 3;
 }
 .signal-label {
   font-family: var(--font-mono);
   font-size: 13px;
-  fill: var(--navy);
+  fill: var(--heading);
   font-weight: 600;
 }
 
@@ -351,7 +370,7 @@ a { color: var(--teal-deep); }
   gap: var(--cds-spacing-03);
   font-family: var(--font-mono);
   font-size: var(--cds-body-compact-01);
-  color: var(--navy);
+  color: var(--heading);
 }
 
 .credentials li {
@@ -517,7 +536,7 @@ a { color: var(--teal-deep); }
   transition: color var(--cds-duration-fast-02) var(--cds-easing-standard),
               border-color var(--cds-duration-fast-02) var(--cds-easing-standard);
 }
-.link-cta:hover { color: var(--navy); border-color: var(--navy); }
+.link-cta:hover { color: var(--heading); border-color: var(--heading); }
 
 /* ============================================
    Testimonials
@@ -540,7 +559,7 @@ a { color: var(--teal-deep); }
   margin: 0 0 var(--cds-spacing-05);
   font-family: var(--font-display);
   font-size: var(--cds-body-02);
-  color: var(--navy);
+  color: var(--heading);
   line-height: 1.4;
 }
 
@@ -571,7 +590,7 @@ a { color: var(--teal-deep); }
   font-family: var(--font-display);
   font-style: italic;
   font-size: var(--cds-body-02);
-  color: var(--navy);
+  color: var(--heading);
   margin: 0 0 var(--cds-spacing-05);
 }
 
