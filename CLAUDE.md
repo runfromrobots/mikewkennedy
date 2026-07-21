@@ -63,15 +63,14 @@ Real:
 * The blazer/window photo (images/headshot.jpg) is the confirmed final headshot choice — don't swap it for other candidate photos without being asked
 * A LinkedIn feed (Juicer.io embed) was tried and explicitly removed — don't re-add it.
 * The most recent Experience entry is intentionally anonymized: the actual employer (a staffing/consulting firm, formerly labeled "DCG Worldwide") is not named anywhere on the site. It reads as "Research Consulting" instead, with a generic flat green leaf logo (`images/logos/research-consulting.png`, generated, not a real company logo) and copy that names the end client as "a Florida utility company." Don't reintroduce the real firm name or swap in a real logo without being asked.
-
-Still placeholder — do not treat as final content:
-
-* Both case study cards (homepage "Selected work" and case-studies/index.html) — no case study content exists yet
+* Both case studies are real, written from the actual source decks (Michael supplied the original .pptx files): `case-studies/foundational-research.html` (Constant Contact → Endurance International persona and journey-mapping work) and `case-studies/artifacts-related-incidents.html` (IBM Security/Resilient Artifacts redesign). Images live in `images/case-studies/<deck-name>/`, sourced directly from the decks' embedded media. Two images were altered before publishing for privacy reasons, per Michael's explicit decisions — don't re-introduce the originals:
+  - `images/case-studies/persona-journey/persona-card-example.jpg` is a redacted version of the deck's `image14.png`: the real names ("Emily Levin & Robyn"), the real org ("Essex National Heritage Commission"), and a direct quote were painted over and replaced with a generic "Local Nonprofit Organization" title. The deck's `image13.png` (a different real named participant, "Nathan Gehle" at "Rexel," with his real photo) was excluded entirely, not just cropped — don't add it.
+  - `images/case-studies/persona-journey/eigi-journey-map-cropped.png` is a cropped version of the deck's `image6.png` ("EIGI 3.0 VSB Journey"): cropped to just the emotional-journey curve and generic touchpoint labels, cutting off the lower rows that named ~14 real small-business customers and their verbatim complaints. Don't swap in the uncropped original.
+  - Both decks also contain images/text not used on the site because they explicitly named real customer companies interviewed (e.g. an artifacts-incidents slide naming "Pfizer and KBC") — the site only names Michael's own employers (Constant Contact, Endurance International, IBM Security/Resilient), consistent with the case study brief's own instruction not to name specific customers.
 
 ## Decisions already made — don't relitigate
 
-* An earlier concept called "InsightForge" (a branded AI-assisted research platform as case-study foundation) was explored and explicitly dropped. Do not reintroduce it or reference it anywhere. The site owner wants a different direction for the first case study, TBD.
-* Case study content will be figured out after the site is deployed — the current placeholder cards are intentional, not an oversight.
+* An earlier concept called "InsightForge" (a branded AI-assisted research platform as case-study foundation) was explored and explicitly dropped. Do not reintroduce it or reference it anywhere. Both real case studies (see Content status above) took a different direction than InsightForge.
 
 ## Conventions
 

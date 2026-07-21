@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Discovery to Design: Artifacts &amp; Related Incidents — Michael Kennedy</title>
+<meta name="description" content="Case study: redesigning the Artifacts functionality in IBM Resilient, an incident response, orchestration, and automation platform.">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="apple-touch-icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="header-content">
+      <span class="brand-spacer" aria-hidden="true"></span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../#about">About</a>
+        <a href="../#log">Experience</a>
+        <a href="../#toolkit">Toolkit</a>
+        <a href="../#work">Work</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+    <a href="../" class="brand">MK</a>
+  </div>
+  <a class="btn btn-secondary btn-header" href="mailto:mikewkennedy@gmail.com">Get in touch</a>
+</header>
+
+<main id="main">
+
+  <section class="section cs-hero">
+    <div class="wrap">
+      <p class="cs-tag">Case study &middot; IBM Security / Resilient &middot; UX Designer / Researcher</p>
+      <h1 class="cs-title">From Discovery to Design: Artifacts &amp; Related Incidents</h1>
+      <p class="cs-subtitle">Redesigning how security analysts work with Artifacts, the data tied to a security incident, inside an incident response platform. A contextual inquiry into one customer&rsquo;s workflow drove several rounds of ideation, refined against a panel of existing users.</p>
+      <a class="link-cta cs-back" href="../case-studies/">&larr; All case studies</a>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>Context</h2>
+      <p>Assigned to redesign the Artifacts functionality inside Resilient, IBM&rsquo;s incident response, orchestration, and automation platform. Artifacts represent the data, IPs, hashes, domains, and more, tied to a security incident. One customer wanted to use Artifacts to unlock new workflows. I proposed a contextual inquiry into their actual incident-response process, which led to several rounds of ideation refined against a panel of existing users.</p>
+
+      <h3>Who, What, Wow</h3>
+      <p>Early research synthesized into a &ldquo;Who / What / Wow&rdquo; framing, a way of keeping the whole team aligned on outcome rather than feature requests:</p>
+      <ul class="cs-process-list">
+        <li><strong>Who:</strong> Security analysts</li>
+        <li><strong>What:</strong> they use Artifacts to identify prior, already-closed incidents with matching indicators, pulling in remediation history and context</li>
+        <li><strong>Wow:</strong> drastically reducing manual triage by surfacing related incidents and enabling identical remediation across them</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>Process</h2>
+      <ul class="cs-process-list">
+        <li>Ran a deep-dive contextual inquiry: an over-the-shoulder session with a SOC lead at a major enterprise customer</li>
+        <li>Conducted six additional user interviews at a customer forum</li>
+        <li>Took findings through an early low-fidelity concept first, validated against the current product experience, then multiple rounds of refinement toward increasingly complex bulk-action use cases</li>
+      </ul>
+
+      <h3>What we learned</h3>
+      <ul class="cs-process-list">
+        <li>Artifacts become more valuable the more context is built around them, and that context is discovered piecework, across multiple places in the tool</li>
+        <li>Analysts already informally help each other by annotating artifacts, a signal for formalizing that behavior</li>
+        <li>When artifacts span multiple incidents, different teams need to coordinate</li>
+        <li>Over time, artifacts reveal patterns useful for a more programmatic defense strategy</li>
+      </ul>
+
+      <div class="cs-figure">
+        <img src="../images/case-studies/artifacts-incidents/add-artifact-modal-annotated.png" alt="The existing Add Artifact modal, annotated with research-driven recommendations." loading="lazy">
+        <figcaption>The existing &ldquo;Add Artifact&rdquo; modal, annotated with research-driven recommendations.</figcaption>
+      </div>
+
+      <div class="cs-figure-row">
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/bulk-enablement-concept.png" alt="Early bulk-enablement concept for adding multiple artifacts at once." loading="lazy">
+          <figcaption>Early bulk-enablement concept.</figcaption>
+        </div>
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/confirm-artifact-types-concept.png" alt="Concept for confirming artifact types after a bulk add." loading="lazy">
+          <figcaption>Confirming artifact types after a bulk add.</figcaption>
+        </div>
+      </div>
+
+      <div class="cs-figure-row">
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/bulk-csv-import-concept.png" alt="Concept for importing artifacts in bulk via CSV." loading="lazy">
+          <figcaption>Handling larger, more complex bulk use cases via CSV import.</figcaption>
+        </div>
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/artifacts-tab-in-incident.png" alt="The Artifacts tab in context within an incident record." loading="lazy">
+          <figcaption>The Artifacts tab in context, within an incident record.</figcaption>
+        </div>
+      </div>
+
+      <div class="cs-figure">
+        <img src="../images/case-studies/artifacts-incidents/relatedness-graph-view.png" alt="The Relatedness graph view, showing how one incident connects to related incidents by shared artifact." loading="lazy">
+        <figcaption>The &ldquo;Relatedness&rdquo; graph view, surfacing how incidents connect by shared artifact.</figcaption>
+      </div>
+
+      <div class="cs-figure-row">
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/related-incidents-concept-1.png" alt="Final design concept for the Related Incidents feature, part one." loading="lazy">
+          <figcaption>Final concept: Related Incidents, by artifact hits.</figcaption>
+        </div>
+        <div class="cs-figure">
+          <img src="../images/case-studies/artifacts-incidents/related-incidents-concept-2.png" alt="Final design concept for the Related Incidents feature, part two." loading="lazy">
+          <figcaption>Related Incidents, continued: connecting to the analyst who resolved a matching incident before.</figcaption>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>Key Decisions</h2>
+      <div class="cs-decisions">
+        <div class="cs-decision">
+          <h4>Validate against the current UI first</h4>
+          <p>Rather than jumping straight to a new concept, the first move was annotating what was broken in the existing experience and proposing targeted fixes. A deliberate, low-risk way to iterate.</p>
+        </div>
+        <div class="cs-decision">
+          <h4>Behavior-driven framing over feature requests</h4>
+          <p>Using Who/What/Wow kept stakeholders aligned on the outcome analysts actually needed, instead of a running list of feature asks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <h2>Outcome</h2>
+      <p>The final direction let incident responders rapidly identify highly related incidents by shared artifacts, and either reuse a prior remediation path or connect directly with the analyst who solved it before, cutting response time on recurring incident patterns. A bulk remediation workflow for related incidents came out of this work as a clear next opportunity.</p>
+    </div>
+  </section>
+
+  <section class="section cs-section">
+    <div class="wrap">
+      <p class="cs-reflection">A good example of iterating in public: validating against what already exists before proposing something new, and using a shared vocabulary to keep a cross-functional team moving in the same direction.</p>
+      <div class="cs-nav-footer">
+        <a class="link-cta" href="foundational-research.html">&larr; Previous case study</a>
+        <a class="link-cta" href="../case-studies/">All case studies</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-quote-wrap">
+    <p class="footer-quote">&ldquo;Peel a Sticky-note sideways and it will always lie flat.&rdquo; &mdash; C. Todd Lombardo</p>
+  </div>
+  <div class="wrap footer-inner">
+    <span>&copy; <span id="year"></span> Michael Kennedy</span>
+    <span>Upstate NY &middot; Remote</span>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
