@@ -32,11 +32,7 @@ git push -u origin main
 4. Deploy — you get a `.vercel.app` URL, with custom domain support
 
 ## Before you go live, edit these placeholders
-- `mailto:hello@example.com` (two places: nav button, contact section) → your real email
-- `https://linkedin.com/in/yourprofile` → your real LinkedIn URL
-- `resume.pdf` → add your actual resume PDF to the folder, same filename, or update the `href`
 - Drop a real photo at `images/headshot.jpg` to replace the navy/teal gradient placeholder — it displays automatically via `object-fit: cover`, with the gradient as a graceful fallback if the file is missing
-- Experience section descriptions are generic placeholders based on your role titles — replace with your actual accomplishments and metrics
 - Case study cards on both the homepage and `/case-studies` are placeholders — swap in real write-ups when ready, or link out to a PDF/Figma prototype
 
 ## Custom domain

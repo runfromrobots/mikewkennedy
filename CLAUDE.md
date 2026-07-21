@@ -42,12 +42,12 @@ Real:
 * Footer quote from C. Todd Lombardo (from the live site)
 * Email (mikewkennedy@gmail.com), phone number (+1 (617) 803-5041), and LinkedIn (https://www.linkedin.com/in/mikewkennedy)
 * Testimonials (Scott Williams, Marek Glinski, Thomas Mackey — real quotes and names, pulled from the live site)
+* resume.pdf (real file, sourced from Michael's actual resume)
+* Experience section titles, dates, and role descriptions (real, pulled from Michael's actual resume)
 
 Still placeholder — do not treat as final content:
 
-* resume.pdf (link exists, file does not)
 * Headshot (images/headshot.jpg is wired up with object-fit: cover and a graceful fallback to the navy/teal gradient if missing — just drop a real file in images/ with that exact name)
-* Experience section role descriptions (plausible-sounding but generic — real accomplishments/metrics still needed per role)
 * Both case study cards (homepage "Selected work" and case-studies/index.html) — no case study content exists yet
 
 ## Decisions already made — don't relitigate
