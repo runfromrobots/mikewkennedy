@@ -35,7 +35,7 @@ git push -u origin main
 - `mailto:hello@example.com` (two places: nav button, contact section) → your real email
 - `https://linkedin.com/in/yourprofile` → your real LinkedIn URL
 - `resume.pdf` → add your actual resume PDF to the folder, same filename, or update the `href`
-- The `.about-portrait` div is currently a navy/teal gradient placeholder in `styles.css` — swap in a real photo by adding `background-image: url('your-photo.jpg');` and `background-size: cover;`
+- Drop a real photo at `images/headshot.jpg` to replace the navy/teal gradient placeholder — it displays automatically via `object-fit: cover`, with the gradient as a graceful fallback if the file is missing
 - Experience section descriptions are generic placeholders based on your role titles — replace with your actual accomplishments and metrics
 - Case study cards on both the homepage and `/case-studies` are placeholders — swap in real write-ups when ready, or link out to a PDF/Figma prototype
 
