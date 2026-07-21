@@ -38,16 +38,17 @@ Real:
 
 * Name, title, years of experience, degrees, certifications
 * Company history/order in the Experience section
-* Toolkit tool list (pulled from the actual live site: UserTesting, UserZoom, Userlytics, Maze, Qualtrics, Optimal Workshop, SurveyMonkey, dScout, Ethnio, ProvenByUsers, Respondent, Pendo, Figma, Miro, Mural, Sketch, plus Claude/NotebookLM/Dovetail/Great Question for AI-enabled synthesis)
+* Toolkit tool list (pulled from the actual live site: UserTesting, UserZoom, Userlytics, User Interviews, Maze, Qualtrics, Optimal Workshop, SurveyMonkey, SurveyGizmo, dScout, Ethnio, ProvenByUsers, Respondent, Pendo, Figma, Miro, Mural, Sketch, plus Claude/NotebookLM/Dovetail/Great Question for AI-enabled synthesis)
 * Footer quote from C. Todd Lombardo (from the live site)
+* Email (mikewkennedy@gmail.com) and phone number (+1 (617) 803-5041), pulled from the live site
+* Testimonials (Scott Williams, Marek Glinski, Thomas Mackey — real quotes and names, pulled from the live site)
 
 Still placeholder — do not treat as final content:
 
-* Email (hello@example.com), LinkedIn URL, phone number
+* LinkedIn URL — not findable on the live site either; still needs a real link
 * resume.pdf (link exists, file does not)
 * Headshot (images/headshot.jpg is wired up with object-fit: cover and a graceful fallback to the navy/teal gradient if missing — just drop a real file in images/ with that exact name)
 * Experience section role descriptions (plausible-sounding but generic — real accomplishments/metrics still needed per role)
-* Testimonials (bracketed placeholder quotes/names)
 * Both case study cards (homepage "Selected work" and case-studies/index.html) — no case study content exists yet
 
 ## Decisions already made — don't relitigate
