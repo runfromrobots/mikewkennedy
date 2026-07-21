@@ -45,11 +45,12 @@ Real:
 * resume.pdf (real file, sourced from Michael's actual resume)
 * Experience section titles, dates, and role descriptions (real, pulled from Michael's actual resume)
 * Employer logos in Experience (images/logos/) and toolkit logos in Toolkit, sourced from each company's own site (or Wikimedia Commons where a direct fetch wasn't possible), full color, on a `.log-logo` / `.tool-chip` + `.tool-logo` pattern. SurveyGizmo has no logo (Alchemer's site blocks automated fetches) — it's still a plain text chip.
+* Headshot (images/headshot.jpg) — real photo, displayed in the About section via object-fit: cover with a gradient fallback if ever removed
+* Hero photo (images/hero-photo.jpg) — real photo, positioned at the convergence point of the signal SVG (`.signal-wrap` / `.hero-photo` in styles.css), replacing the abstract node with an actual portrait
+* images/unplaced/ holds three more real photos (ibm-research.jpg, collaborative-laptop.jpg, home-office-dog.jpg) with no page placement decided yet — ask the site owner before using any of them
 
 Still placeholder — do not treat as final content:
 
-* Headshot (images/headshot.jpg is wired up with object-fit: cover and a graceful fallback to the navy/teal gradient if missing — just drop a real file in images/ with that exact name)
-* Personal photo(s) for the hero section — placement/treatment still to be decided once photos are provided (currently the hero has the signal-convergence SVG only)
 * Both case study cards (homepage "Selected work" and case-studies/index.html) — no case study content exists yet
 
 ## Decisions already made — don't relitigate

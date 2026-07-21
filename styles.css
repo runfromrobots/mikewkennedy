@@ -206,7 +206,23 @@ a { color: var(--teal-deep); }
 }
 
 .hero-signal { display: flex; justify-content: center; }
-.signal-svg { width: 100%; max-width: 420px; height: auto; }
+.signal-wrap { position: relative; width: 100%; max-width: 420px; }
+.signal-svg { width: 100%; max-width: 420px; height: auto; display: block; }
+
+.hero-photo {
+  position: absolute;
+  left: 54.76%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 27%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--teal);
+  box-shadow: 0 0 0 6px var(--paper);
+  opacity: 0;
+  animation: pop 0.4s ease-out 1s forwards;
+}
 
 .signal-source line {
   stroke: var(--line);
