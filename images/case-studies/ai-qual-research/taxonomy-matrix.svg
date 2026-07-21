@@ -1,0 +1,55 @@
+<svg viewBox="0 0 1000 460" width="1000" height="460" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="460" fill="#08090D"/>
+  <g font-family="Arial, sans-serif">
+    <text x="500" y="50" text-anchor="middle" fill="#2EE6FF" font-size="26" font-weight="bold">Standardizing the Chaos: A Taxonomy Matrix</text>
+    <text x="500" y="78" text-anchor="middle" fill="#7C99A1" font-size="14">A strict file-naming convention, fixed before research began, effectively pre-coded the dataset for AI synthesis</text>
+
+    <!-- central code box -->
+    <rect x="400" y="110" width="200" height="70" rx="10" fill="#0a2540"/>
+    <text x="500" y="154" text-anchor="middle" fill="#22E5FF" font-size="30" font-weight="bold" font-family="monospace">VP17ME</text>
+
+    <!-- connector lines -->
+    <line x1="450" y1="180" x2="150" y2="240" stroke="#3A4B58" stroke-width="2"/>
+    <line x1="480" y1="180" x2="390" y2="240" stroke="#3A4B58" stroke-width="2"/>
+    <line x1="520" y1="180" x2="610" y2="240" stroke="#3A4B58" stroke-width="2"/>
+    <line x1="550" y1="180" x2="850" y2="240" stroke="#3A4B58" stroke-width="2"/>
+
+    <!-- 4 attribute boxes -->
+    <g>
+      <rect x="40" y="240" width="220" height="130" rx="8" fill="#0F2530" stroke="#33CFEA" stroke-width="2"/>
+      <rect x="60" y="260" width="18" height="18" fill="#33CFEA"/>
+      <text x="90" y="274" fill="#E4F6F8" font-size="15" font-weight="bold">V: Modality</text>
+      <text x="60" y="300" fill="#E4F6F8" font-size="13">Virtual</text>
+      <text x="60" y="320" fill="#7C99A1" font-size="12">(vs. In-Person)</text>
+    </g>
+
+    <g>
+      <rect x="280" y="240" width="220" height="130" rx="8" fill="#0E241C" stroke="#4ECB8C" stroke-width="2"/>
+      <rect x="300" y="260" width="18" height="18" fill="#4ECB8C"/>
+      <text x="330" y="274" fill="#E4F6F8" font-size="15" font-weight="bold">P17: Subject</text>
+      <text x="300" y="300" fill="#E4F6F8" font-size="13">Participant 17</text>
+    </g>
+
+    <g>
+      <rect x="520" y="240" width="220" height="130" rx="8" fill="#1C1830" stroke="#8B6FA8" stroke-width="2"/>
+      <rect x="540" y="260" width="18" height="18" fill="#8B6FA8"/>
+      <text x="570" y="274" fill="#E4F6F8" font-size="15" font-weight="bold">M: Region</text>
+      <text x="540" y="300" fill="#E4F6F8" font-size="13">Region A</text>
+      <text x="540" y="320" fill="#7C99A1" font-size="12">(vs. Region B, Region C)</text>
+    </g>
+
+    <g>
+      <rect x="760" y="240" width="200" height="130" rx="8" fill="#2A1420" stroke="#FF2EC4" stroke-width="2"/>
+      <rect x="780" y="260" width="18" height="18" fill="#FF2EC4"/>
+      <text x="810" y="274" fill="#E4F6F8" font-size="15" font-weight="bold">E: Utility</text>
+      <text x="780" y="300" fill="#E4F6F8" font-size="13">Electric</text>
+      <text x="780" y="320" fill="#7C99A1" font-size="12">(vs. Gas, Solar)</text>
+    </g>
+
+    <!-- insight strip -->
+    <rect x="40" y="400" width="920" height="45" rx="8" fill="#0F2530"/>
+    <text x="500" y="428" text-anchor="middle" fill="#22E5FF" font-size="13" font-weight="bold">
+      A fixed structure let every AI-synthesized insight be sliced and cross-referenced by region or utility type, with no manual tagging required
+    </text>
+  </g>
+</svg>

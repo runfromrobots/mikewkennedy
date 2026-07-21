@@ -869,6 +869,10 @@ a.case-card:hover { border-color: var(--teal); }
   pointer-events: none;
   z-index: 2;
 }
+/* Recreated concept graphics (no real client data) skip the obscured
+   treatment entirely — full clarity is the point of these. */
+.cs-figure-clean img { filter: none; border: none; }
+.cs-figure-clean::before { display: none; }
 
 /* ============================================
    Case study image carousel

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1000 420" width="1000" height="420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="420" fill="#08090D"/>
+  <g font-family="Arial, sans-serif">
+    <text x="500" y="50" text-anchor="middle" fill="#2EE6FF" font-size="26" font-weight="bold">From Transcript to Diagnostic Heatmap</text>
+    <text x="500" y="78" text-anchor="middle" fill="#7C99A1" font-size="14">Standardized inputs let AI score usability tasks across dozens of transcripts instantly</text>
+
+    <!-- rows -->
+    <g>
+      <rect x="60" y="110" width="20" height="56" rx="4" fill="#4a9f6e"/>
+      <rect x="90" y="110" width="850" height="56" rx="6" fill="#0E1A14" stroke="#1E3A2A"/>
+      <text x="115" y="132" fill="#E4F6F8" font-size="15" font-weight="bold">Task 1 &amp; 2: Total Due &amp; Due Date</text>
+      <text x="115" y="153" fill="#7C99A1" font-size="13">Effortless. Immediate visual location.</text>
+    </g>
+
+    <g>
+      <rect x="60" y="180" width="20" height="56" rx="4" fill="#4a9f6e"/>
+      <rect x="90" y="180" width="850" height="56" rx="6" fill="#0E1A14" stroke="#1E3A2A"/>
+      <text x="115" y="202" fill="#E4F6F8" font-size="15" font-weight="bold">Task 4: Locating Next Steps</text>
+      <text x="115" y="223" fill="#7C99A1" font-size="13">Easy. Payment methods easily understood.</text>
+    </g>
+
+    <g>
+      <rect x="60" y="250" width="20" height="56" rx="4" fill="#d4a72c"/>
+      <rect x="90" y="250" width="850" height="56" rx="6" fill="#241D0C" stroke="#4A3A16"/>
+      <text x="115" y="272" fill="#E4F6F8" font-size="15" font-weight="bold">Task 5: Understand Meter Reading</text>
+      <text x="115" y="293" fill="#7C99A1" font-size="13">Difficult. Ambiguous labeling caused widespread friction.</text>
+    </g>
+
+    <g>
+      <rect x="60" y="320" width="20" height="56" rx="4" fill="#c0503f"/>
+      <rect x="90" y="320" width="850" height="56" rx="6" fill="#2A1512" stroke="#4A2420"/>
+      <text x="115" y="342" fill="#E4F6F8" font-size="15" font-weight="bold">Task 7: Understand the Charges</text>
+      <text x="115" y="363" fill="#7C99A1" font-size="13">Very difficult. Critical failure area, high cognitive load.</text>
+    </g>
+  </g>
+</svg>
