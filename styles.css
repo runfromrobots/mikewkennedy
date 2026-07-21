@@ -438,10 +438,25 @@ a { color: var(--teal-deep); }
 }
 
 .log-when {
-  font-family: var(--font-mono);
-  font-size: var(--cds-body-compact-01);
-  color: var(--teal-deep);
+  display: flex;
+  flex-direction: column;
   padding-top: var(--cds-spacing-01);
+}
+.log-company {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--teal-deep);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.log-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-size: var(--cds-caption-01);
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin-top: 3px;
 }
 
 .log-logo {
