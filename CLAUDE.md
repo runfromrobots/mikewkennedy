@@ -48,6 +48,8 @@ Real:
 * Headshot (images/headshot.jpg) — real photo, displayed in the About section via object-fit: cover with a gradient fallback if ever removed
 * Hero photo (images/hero-photo.jpg) — real photo, positioned at the convergence point of the signal SVG (`.signal-wrap` / `.hero-photo` in styles.css), replacing the abstract node with an actual portrait
 * images/unplaced/ holds three more real photos (ibm-research.jpg, collaborative-laptop.jpg, home-office-dog.jpg) with no page placement decided yet — ask the site owner before using any of them
+* Favicon (images/favicon.png) — real square photo, wired via `<link rel="icon">` / `<link rel="apple-touch-icon">` in both index.html and case-studies/index.html
+* The blazer/window photo (images/headshot.jpg) is the confirmed final headshot choice — don't swap it for other candidate photos without being asked
 
 Still placeholder — do not treat as final content:
 
