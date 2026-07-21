@@ -41,7 +41,7 @@
   --cds-spacing-13: 10rem;    /* 160px */
 
   /* Carbon type scale, mapped onto this site's existing font families */
-  --cds-caption-01: 0.75rem;
+  --cds-caption-01: 0.9375rem;
   --cds-body-compact-01: 0.875rem;
   --cds-body-01: 0.875rem;
   --cds-body-02: 1rem;
