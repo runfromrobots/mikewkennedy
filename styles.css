@@ -18,6 +18,7 @@
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --accent-magenta: transparent; /* only meaningful in dark mode; see below */
 
   --wrap: 1120px;
   --radius: 3px;
@@ -137,13 +138,14 @@ a { color: var(--teal-deep); }
   background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: stretch;
 }
 
 .header-inner {
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: var(--cds-spacing-06);
+  flex: 1;
+  min-width: 0;
 }
 
 .header-content {
@@ -517,9 +519,16 @@ a { color: var(--teal-deep); }
 
 .contact-links {
   display: flex;
-  gap: var(--cds-spacing-05);
+  gap: 0;
   margin-top: var(--cds-spacing-05);
   flex-wrap: wrap;
+}
+
+.contact .btn-primary {
+  background: var(--teal-deep);
+}
+.contact .btn-primary:hover {
+  background: var(--teal);
 }
 
 .contact .btn-secondary {
