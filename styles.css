@@ -41,10 +41,10 @@
   --cds-spacing-13: 10rem;    /* 160px */
 
   /* Carbon type scale, mapped onto this site's existing font families */
-  --cds-caption-01: 1rem;
-  --cds-body-compact-01: 1.0625rem;
-  --cds-body-01: 1.0625rem;
-  --cds-body-02: 1rem;
+  --cds-caption-01: 1.125rem;
+  --cds-body-compact-01: 1.1875rem;
+  --cds-body-01: 1.1875rem;
+  --cds-body-02: 1.125rem;
   --cds-heading-03: 1.25rem;
 
   /* Carbon motion */
@@ -446,7 +446,7 @@ a { color: var(--teal-deep); }
 .log-company {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--teal-deep);
   letter-spacing: 0.03em;
   text-transform: uppercase;
