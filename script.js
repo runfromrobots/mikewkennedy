@@ -1,5 +1,34 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Theme toggle: slider switch between the dark theme and its inverted
+// counterpart. The <head> of every page also has a small inline script that
+// applies the saved choice before first paint, so there's no flash of the
+// wrong theme; this block only needs to build the switch and wire it up.
+(function () {
+  const headerContent = document.querySelector('.header-content');
+  if (!headerContent) return;
+
+  const isInverted = document.documentElement.getAttribute('data-theme') === 'inverted';
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'theme-toggle';
+  toggle.setAttribute('aria-pressed', String(isInverted));
+  toggle.setAttribute('aria-label', 'Switch color theme');
+  toggle.innerHTML = `
+    <span class="theme-toggle-label">Invert</span>
+    <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+  `;
+  headerContent.appendChild(toggle);
+
+  toggle.addEventListener('click', () => {
+    const nowInverted = document.documentElement.getAttribute('data-theme') !== 'inverted';
+    document.documentElement.setAttribute('data-theme', nowInverted ? 'inverted' : 'dark');
+    toggle.setAttribute('aria-pressed', String(nowInverted));
+    localStorage.setItem('mk-theme', nowInverted ? 'inverted' : 'dark');
+  });
+})();
+
 // Highlight the active nav link based on scroll position
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.site-nav a');
