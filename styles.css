@@ -6,25 +6,16 @@
   --navy-ink: #12233B;
   --teal: #33CFEA;
   --teal-deep: #22E5FF;
-  --teal-deep-rgb: 34, 229, 255;
   --teal-tint: rgba(34, 229, 255, 0.12);
   --paper: #08090D;
-  --paper-rgb: 8, 9, 13;
   --paper-raised: #12141B;
-  --paper-raised-rgb: 18, 20, 27;
   --line: #223038;
   --ink: #E4F6F8;
   --ink-soft: #7C99A1;
   --heading: #2EE6FF;
   --header-bg: rgba(8, 9, 13, 0.88);
   --accent-magenta: #FF2EC4;
-  --accent-magenta-rgb: 255, 46, 196;
   --accent-purple: #6B5FA8;
-  --accent-purple-glow-rgb: 139, 111, 168;
-  --scanline-rgb: 255, 255, 255;
-  --on-accent: #08090D;
-  --on-navy: #fff;
-  --on-navy-soft: #C9D6E3;
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -63,37 +54,9 @@
   /* Carbon breakpoints: sm 320 / md 672 / lg 1056 / xlg 1312 / max 1584 */
 }
 
-/* Inverted theme: a literal lightness/color inversion of the dark/terminal
-   palette above, toggled via the switch in the header (script.js sets
-   data-theme="inverted" on <html> and remembers the choice in localStorage).
-   Every token above has a counterpart here so nothing falls back to the
-   dark-theme default when the toggle is flipped. */
-:root[data-theme="inverted"] {
-  --navy: #F5DABF;
-  --navy-ink: #EDDCC4;
-  --teal: #CC3015;
-  --teal-deep: #DD1A00;
-  --teal-deep-rgb: 221, 26, 0;
-  --teal-tint: rgba(221, 26, 0, 0.12);
-  --paper: #F7F6F2;
-  --paper-rgb: 247, 246, 242;
-  --paper-raised: #EDEBE4;
-  --paper-raised-rgb: 237, 235, 228;
-  --line: #DDCFC7;
-  --ink: #1B0907;
-  --ink-soft: #83665E;
-  --heading: #D11900;
-  --header-bg: rgba(247, 246, 242, 0.88);
-  --accent-magenta: #00D13B;
-  --accent-magenta-rgb: 0, 209, 59;
-  --accent-purple: #94A057;
-  --accent-purple-glow-rgb: 116, 144, 87;
-  --scanline-rgb: 0, 0, 0;
-  --on-accent: #F7F6F2;
-  --on-navy: #14100A;
-  --on-navy-soft: #36291C;
-}
-:root[data-theme="inverted"] body { color-scheme: light; }
+/* This site has one theme only — the dark/terminal palette above (see the
+   effects block near the end of this file for glow/scanline/glitch rules).
+   There is no light mode and no prefers-color-scheme switch. */
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -140,7 +103,7 @@ a { color: var(--teal-deep); }
   left: -999px;
   top: 0;
   background: var(--navy);
-  color: var(--on-navy);
+  color: #fff;
   padding: 10px 16px;
   z-index: 100;
 }
@@ -217,7 +180,7 @@ a { color: var(--teal-deep); }
   background-position: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
   border: 3px solid var(--teal-deep);
-  box-shadow: 0 0 24px rgba(var(--teal-deep-rgb), 0.4);
+  box-shadow: 0 0 24px rgba(34, 229, 255, 0.4);
 }
 
 .site-nav {
@@ -263,13 +226,13 @@ a { color: var(--teal-deep); }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--teal-deep) 0%, var(--accent-magenta) 100%);
-  color: var(--on-accent);
-  box-shadow: 0 0 24px rgba(var(--teal-deep-rgb), 0.35);
+  color: #08090D;
+  box-shadow: 0 0 24px rgba(34, 229, 255, 0.35);
 }
 .btn-secondary {
   background: linear-gradient(135deg, var(--teal-deep) 0%, var(--navy) 100%);
-  color: var(--on-accent);
-  box-shadow: 0 0 20px rgba(var(--teal-deep-rgb), 0.3);
+  color: #08090D;
+  box-shadow: 0 0 20px rgba(34, 229, 255, 0.3);
 }
 .btn-primary:hover,
 .btn-secondary:hover,
@@ -277,7 +240,7 @@ a { color: var(--teal-deep); }
 .contact-links .btn:hover {
   background: var(--accent-purple);
   color: var(--ink);
-  box-shadow: 0 0 24px rgba(var(--accent-purple-glow-rgb), 0.45);
+  box-shadow: 0 0 24px rgba(139, 111, 168, 0.45);
 }
 
 /* Touching button pairs share ONE continuous gradient/glow on the parent
@@ -288,7 +251,7 @@ a { color: var(--teal-deep); }
 .hero-actions,
 .contact-links {
   background: linear-gradient(135deg, var(--teal-deep) 0%, var(--accent-magenta) 100%);
-  box-shadow: 0 0 24px rgba(var(--teal-deep-rgb), 0.3);
+  box-shadow: 0 0 24px rgba(34, 229, 255, 0.3);
 }
 .hero-actions .btn,
 .contact-links .btn {
@@ -472,7 +435,7 @@ a { color: var(--teal-deep); }
   border-bottom: 1px solid var(--line);
 }
 .log-entry:nth-child(even) {
-  background: rgba(var(--teal-deep-rgb), 0.035);
+  background: rgba(34, 229, 255, 0.035);
 }
 
 .log-when {
@@ -590,7 +553,7 @@ a.case-card:hover { border-color: var(--teal); }
    ============================================ */
 .contact {
   background: var(--navy);
-  color: var(--on-navy);
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -608,18 +571,18 @@ a.case-card:hover { border-color: var(--teal); }
   right: -15%;
   width: 55%;
   height: 160%;
-  background: radial-gradient(circle, rgba(var(--accent-magenta-rgb), 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 46, 196, 0.2) 0%, transparent 70%);
 }
 .contact::after {
   bottom: -30%;
   left: -10%;
   width: 45%;
   height: 120%;
-  background: radial-gradient(circle, rgba(var(--teal-deep-rgb), 0.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34, 229, 255, 0.16) 0%, transparent 70%);
 }
 .contact-inner { position: relative; z-index: 1; }
-.contact h2 { color: var(--on-navy); }
-.contact p { color: var(--on-navy-soft); }
+.contact h2 { color: #fff; }
+.contact p { color: #C9D6E3; }
 
 .contact-links {
   display: flex;
@@ -708,7 +671,7 @@ a.case-card:hover { border-color: var(--teal); }
 .contact-phone {
   font-family: var(--font-mono);
   font-size: var(--cds-body-compact-01);
-  color: var(--on-navy-soft);
+  color: #C9D6E3;
   margin-top: var(--cds-spacing-04);
 }
 .site-footer {
@@ -894,7 +857,7 @@ a.case-card:hover { border-color: var(--teal); }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--ink);
-  background: rgba(var(--paper-rgb), 0.75);
+  background: rgba(8, 9, 13, 0.75);
   border: 1px solid var(--teal);
   padding: var(--cds-spacing-03) var(--cds-spacing-05);
   border-radius: 999px;
@@ -910,11 +873,6 @@ a.case-card:hover { border-color: var(--teal); }
    treatment entirely — full clarity is the point of these. */
 .cs-figure-clean img { filter: none; border: none; }
 .cs-figure-clean::before { display: none; }
-/* These concept graphics are static SVG files with hardcoded dark-theme
-   colors baked in, so they can't read CSS variables. A literal invert()
-   filter mirrors the same literal RGB inversion used to build the
-   inverted theme's palette, so the two still match in inverted mode. */
-:root[data-theme="inverted"] .cs-figure-clean img { filter: invert(1); }
 
 /* ============================================
    Case study image carousel
@@ -971,7 +929,7 @@ a.case-card:hover { border-color: var(--teal); }
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--teal);
-  background: rgba(var(--paper-rgb), 0.75);
+  background: rgba(8, 9, 13, 0.75);
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: 1.25rem;
@@ -1088,16 +1046,16 @@ a.case-card:hover { border-color: var(--teal); }
    restrained: no effect runs longer than a hover or loops fast)
    ============================================ */
 h1, h2, h3 {
-  text-shadow: 0 0 16px rgba(var(--teal-deep-rgb), 0.3);
+  text-shadow: 0 0 16px rgba(46, 230, 255, 0.3);
 }
 
 .hero-photo-main {
   border: 3px solid var(--teal-deep);
-  box-shadow: 0 0 24px rgba(var(--teal-deep-rgb), 0.4);
+  box-shadow: 0 0 24px rgba(46, 230, 255, 0.4);
 }
 .hero-photo-accent {
   border: 3px solid var(--accent-magenta);
-  box-shadow: 0 0 20px rgba(var(--accent-magenta-rgb), 0.4);
+  box-shadow: 0 0 20px rgba(255, 46, 196, 0.4);
 }
 
 /* Soft gradient blobs behind the hero, echoing the cyan/magenta reference */
@@ -1116,14 +1074,14 @@ h1, h2, h3 {
   right: -15%;
   width: 55%;
   height: 160%;
-  background: radial-gradient(circle, rgba(var(--accent-magenta-rgb), 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 46, 196, 0.2) 0%, transparent 70%);
 }
 .hero::after {
   bottom: -30%;
   left: -10%;
   width: 45%;
   height: 120%;
-  background: radial-gradient(circle, rgba(var(--teal-deep-rgb), 0.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34, 229, 255, 0.16) 0%, transparent 70%);
 }
 .hero-inner { position: relative; z-index: 1; }
 
@@ -1134,7 +1092,7 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   height: 40%;
-  background: linear-gradient(to bottom, transparent, rgba(var(--teal-deep-rgb), 0.1), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(46, 230, 255, 0.1), transparent);
   animation: scan-sweep 6s linear infinite;
   pointer-events: none;
 }
@@ -1152,8 +1110,8 @@ body::after {
   z-index: 999;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(var(--scanline-rgb), 0.025) 0px,
-    rgba(var(--scanline-rgb), 0.025) 1px,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
     transparent 1px,
     transparent 3px
   );
@@ -1184,11 +1142,11 @@ body::after {
   align-items: center;
   gap: var(--cds-spacing-04);
   max-width: 360px;
-  background: rgba(var(--paper-raised-rgb), 0.95);
+  background: rgba(18, 20, 27, 0.95);
   backdrop-filter: blur(8px);
   border: 1px solid var(--teal);
   border-radius: var(--radius);
-  box-shadow: 0 0 24px rgba(var(--teal-deep-rgb), 0.2);
+  box-shadow: 0 0 24px rgba(34, 229, 255, 0.2);
   padding: var(--cds-spacing-04) var(--cds-spacing-05);
 }
 .site-banner-link {
@@ -1222,51 +1180,4 @@ body::after {
     right: var(--cds-spacing-04);
     max-width: none;
   }
-}
-
-/* ============================================
-   Theme toggle (slider switch between dark and inverted)
-   ============================================ */
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--cds-spacing-03);
-  margin-left: auto;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: var(--cds-caption-01);
-  color: var(--ink-soft);
-}
-.theme-toggle:hover { color: var(--ink); }
-.theme-toggle-track {
-  position: relative;
-  width: 44px;
-  height: 24px;
-  flex-shrink: 0;
-  border-radius: 999px;
-  background: var(--paper-raised);
-  border: 1px solid var(--teal);
-  transition: background-color var(--cds-duration-fast-02) var(--cds-easing-standard);
-}
-.theme-toggle-thumb {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--teal-deep);
-  transition: transform var(--cds-duration-fast-02) var(--cds-easing-standard),
-              background-color var(--cds-duration-fast-02) var(--cds-easing-standard);
-}
-:root[data-theme="inverted"] .theme-toggle-thumb {
-  transform: translateX(20px);
-  background: var(--accent-magenta);
-}
-
-@media (max-width: 1056px) {
-  .theme-toggle-label { display: none; }
 }
