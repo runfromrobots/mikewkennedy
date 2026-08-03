@@ -1,6 +1,6 @@
 # Project: Michael Kennedy (MK) Portfolio Site
 
-Personal portfolio/resume site for Michael Kennedy, a Senior UX Researcher (13+ years) targeting Senior/Lead-level UX Research roles, fully remote. Static site, no build step, no framework.
+Personal portfolio/resume site for Michael Kennedy, a UX Research Leader (13+ years) targeting Senior/Lead-level UX Research roles, fully remote. The site's self-description headline is "UX Research Leader" (chosen over "Senior UX Researcher"), with the About copy naming past titles: Principal UX Researcher, UX Designer / Researcher, and UX Research Operations specialist. Static site, no build step, no framework.
 
 ## Stack
 
