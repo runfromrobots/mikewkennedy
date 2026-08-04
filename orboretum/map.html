@@ -273,33 +273,48 @@
       return [coords[mid][1], coords[mid][0]];
     }
 
-    // Avoid label overlap using a simple grid-based collision detection
-    function findNonOverlappingPosition(originalPos, existingLabels, mapSize = 50) {
-      const candidates = [
-        [originalPos[0], originalPos[1]],
-        [originalPos[0] + 0.0005, originalPos[1]],
-        [originalPos[0] - 0.0005, originalPos[1]],
-        [originalPos[0], originalPos[1] + 0.0005],
-        [originalPos[0], originalPos[1] - 0.0005],
-        [originalPos[0] + 0.0005, originalPos[1] + 0.0005],
-        [originalPos[0] - 0.0005, originalPos[1] - 0.0005],
-        [originalPos[0] + 0.0005, originalPos[1] - 0.0005],
-        [originalPos[0] - 0.0005, originalPos[1] + 0.0005],
-      ];
+    // Avoid label overlap by radiating outward from original position
+    function findNonOverlappingPosition(originalPos, existingLabels) {
+      const minDistance = 0.0008; // Minimum distance between labels in degrees
 
-      for (let candidate of candidates) {
-        let collision = false;
-        for (let existing of existingLabels) {
-          const dist = Math.sqrt(
-            Math.pow(candidate[0] - existing[0], 2) +
-            Math.pow(candidate[1] - existing[1], 2)
-          );
-          if (dist < 0.0002) {
-            collision = true;
-            break;
-          }
+      // Check if original position is free
+      let collision = false;
+      for (let existing of existingLabels) {
+        const dist = Math.sqrt(
+          Math.pow(originalPos[0] - existing[0], 2) +
+          Math.pow(originalPos[1] - existing[1], 2)
+        );
+        if (dist < minDistance) {
+          collision = true;
+          break;
         }
-        if (!collision) return candidate;
+      }
+      if (!collision) return originalPos;
+
+      // Search in expanding spiral pattern
+      const maxRadius = 0.005;
+      const step = 0.0005;
+
+      for (let radius = step; radius <= maxRadius; radius += step) {
+        for (let angle = 0; angle < Math.PI * 2; angle += Math.PI / 8) {
+          const candidate = [
+            originalPos[0] + radius * Math.cos(angle),
+            originalPos[1] + radius * Math.sin(angle)
+          ];
+
+          let isFree = true;
+          for (let existing of existingLabels) {
+            const dist = Math.sqrt(
+              Math.pow(candidate[0] - existing[0], 2) +
+              Math.pow(candidate[1] - existing[1], 2)
+            );
+            if (dist < minDistance) {
+              isFree = false;
+              break;
+            }
+          }
+          if (isFree) return candidate;
+        }
       }
       return originalPos;
     }
