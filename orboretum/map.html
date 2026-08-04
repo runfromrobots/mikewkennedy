@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map - The Orboretum</title>
+  <meta name="description" content="Interactive map showing trails, property boundaries, and plant collection observations at The Orboretum.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <style>
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      margin: 2rem 0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .map-controls {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      padding: 1rem;
+      z-index: 999;
+      min-width: 250px;
+    }
+
+    .map-controls h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      color: var(--forest-900);
+    }
+
+    .layer-toggle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      gap: 0.75rem;
+    }
+
+    .layer-toggle input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .layer-toggle label {
+      margin: 0;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: var(--forest-800);
+      flex: 1;
+    }
+
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      padding: 1rem;
+      z-index: 999;
+      max-width: 250px;
+    }
+
+    .legend h3 {
+      margin: 0 0 0.75rem 0;
+      font-size: 0.95rem;
+      color: var(--forest-900);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--forest-800);
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .legend-line {
+      width: 30px;
+      height: 3px;
+      flex-shrink: 0;
+    }
+
+    .observation-count {
+      font-size: 0.85rem;
+      color: var(--forest-800);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .map-container {
+        height: 500px;
+      }
+
+      .map-controls,
+      .legend {
+        max-width: 90vw;
+        left: 5vw;
+        right: auto;
+      }
+
+      .legend {
+        bottom: auto;
+        top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="/" class="logo">The Orboretum</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Interactive Map</h1>
+        <p>Explore trails, property boundaries, and documented plant observations</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="map-container">
+          <div id="map"></div>
+
+          <div class="map-controls">
+            <h3>Map Layers</h3>
+            <div class="layer-toggle">
+              <input type="checkbox" id="trail-toggle" checked>
+              <label for="trail-toggle">Trail Route</label>
+            </div>
+            <div class="layer-toggle">
+              <input type="checkbox" id="boundary-toggle" checked>
+              <label for="boundary-toggle">Property Boundary</label>
+            </div>
+            <div class="layer-toggle">
+              <input type="checkbox" id="observations-toggle" checked>
+              <label for="observations-toggle">Plant Observations</label>
+            </div>
+            <div class="layer-toggle">
+              <input type="checkbox" id="features-toggle" checked>
+              <label for="features-toggle">Current Property Features</label>
+            </div>
+            <div class="layer-toggle">
+              <input type="checkbox" id="parcels-toggle" checked>
+              <label for="parcels-toggle">Proposed Arboretum Parcels</label>
+            </div>
+          </div>
+
+          <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-item">
+              <div class="legend-line" style="background-color: #42b37c;"></div>
+              <span>Hiking Trail</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-line" style="border: 2px dashed #808080; height: 1px;"></div>
+              <span>Property Boundary</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #2196F3;"></div>
+              <span>Plant Observation</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #6B4423; border: 1px solid #5D3817;"></div>
+              <span>Current Property Features</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #2C5AA0; border: 1px solid #1E3A5F;"></div>
+              <span>Proposed Arboretum Parcels</span>
+            </div>
+            <div class="observation-count">
+              <strong><span id="obs-count">0</span> observations documented</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>About This Map</h2>
+        <p>This interactive map displays three key data layers for The Orboretum:</p>
+        <ul>
+          <li><strong>Trail Route:</strong> The 1.5-mile main loop trail (green line) providing access through the property</li>
+          <li><strong>Property Boundaries:</strong> The 200-acre main property and adjacent parcels that comprise The Orboretum</li>
+          <li><strong>Plant Observations:</strong> Documented plant species observations from our growing collection, recorded via iNaturalist and automatically synced to this database</li>
+        </ul>
+        <p>Use the layer controls to toggle different data on and off. The map supports zooming, panning, and clicking on observations to see full details.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>The Orboretum preserves, cultivates, and interprets native and heritage trees on a historically significant landscape in the Mohawk Valley.</p>
+      <div class="footer-bottom">
+        <p>472 Anderson Road, Sprakers, NY</p>
+        <p>&copy; <span id="year">2024</span> The Orboretum</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    let mapInstance;
+    let trailLayer, boundaryLayer, observationsLayer, featuresLayer, featuresLabels, parcelsLayer, parcelsLabels;
+    let allObservations = [];
+    let featureLabels = [];
+    let parcelLabels = [];
+
+    // Helper function to calculate polygon center
+    function getPolygonCenter(coords) {
+      let x = 0, y = 0, count = 0;
+      if (coords[0][0].length === 2) {
+        coords[0].forEach(point => {
+          x += point[0];
+          y += point[1];
+          count++;
+        });
+      } else {
+        coords.forEach(ring => {
+          ring.forEach(point => {
+            x += point[0];
+            y += point[1];
+            count++;
+          });
+        });
+      }
+      return [y / count, x / count];
+    }
+
+    // Helper function to calculate line center
+    function getLineCenter(coords) {
+      const mid = Math.floor(coords.length / 2);
+      return [coords[mid][1], coords[mid][0]];
+    }
+
+    // Avoid label overlap using a simple grid-based collision detection
+    function findNonOverlappingPosition(originalPos, existingLabels, mapSize = 50) {
+      const candidates = [
+        [originalPos[0], originalPos[1]],
+        [originalPos[0] + 0.0005, originalPos[1]],
+        [originalPos[0] - 0.0005, originalPos[1]],
+        [originalPos[0], originalPos[1] + 0.0005],
+        [originalPos[0], originalPos[1] - 0.0005],
+        [originalPos[0] + 0.0005, originalPos[1] + 0.0005],
+        [originalPos[0] - 0.0005, originalPos[1] - 0.0005],
+        [originalPos[0] + 0.0005, originalPos[1] - 0.0005],
+        [originalPos[0] - 0.0005, originalPos[1] + 0.0005],
+      ];
+
+      for (let candidate of candidates) {
+        let collision = false;
+        for (let existing of existingLabels) {
+          const dist = Math.sqrt(
+            Math.pow(candidate[0] - existing[0], 2) +
+            Math.pow(candidate[1] - existing[1], 2)
+          );
+          if (dist < 0.0002) {
+            collision = true;
+            break;
+          }
+        }
+        if (!collision) return candidate;
+      }
+      return originalPos;
+    }
+
+    function initMap() {
+      mapInstance = L.map('map').setView([42.886, -74.441], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+      }).addTo(mapInstance);
+
+      // Load trail data
+      fetch('maps/geojson/trails.geojson')
+        .then(response => response.json())
+        .then(data => {
+          trailLayer = L.geoJSON(data, {
+            style: {
+              color: '#42b37c',
+              weight: 4,
+              opacity: 0.9
+            }
+          }).addTo(mapInstance);
+        });
+
+      // Load property boundaries
+      fetch('maps/geojson/boundaries.geojson')
+        .then(response => response.json())
+        .then(data => {
+          boundaryLayer = L.geoJSON(data, {
+            style: {
+              color: '#4a7c7e',
+              weight: 3.5,
+              opacity: 0.85,
+              fillColor: '#4a7c7e',
+              fillOpacity: 0.12
+            }
+          }).addTo(mapInstance);
+        });
+
+      // Load features (parking, cemetery, proposed trail) - BROWN COLOR
+      fetch('maps/geojson/features.geojson')
+        .then(response => response.json())
+        .then(data => {
+          featuresLayer = L.geoJSON(data, {
+            style: {
+              color: '#6B4423',
+              weight: 2,
+              opacity: 0.7,
+              fillColor: '#6B4423',
+              fillOpacity: 0.15
+            }
+          }).addTo(mapInstance);
+
+          // Add labels with leader lines
+          featuresLabels = L.featureGroup().addTo(mapInstance);
+          featureLabels = [];
+
+          data.features.forEach(feature => {
+            const props = feature.properties;
+            let center;
+            if (feature.geometry.type === 'LineString') {
+              center = getLineCenter(feature.geometry.coordinates);
+            } else {
+              center = getPolygonCenter(feature.geometry.coordinates);
+            }
+
+            // Find non-overlapping position
+            const labelPos = findNonOverlappingPosition(center, featureLabels);
+            featureLabels.push(labelPos);
+
+            // Draw leader line if label moved
+            const distance = Math.sqrt(
+              Math.pow(labelPos[0] - center[0], 2) +
+              Math.pow(labelPos[1] - center[1], 2)
+            );
+            if (distance > 0.00001) {
+              L.polyline([center, labelPos], {
+                color: '#6B4423',
+                weight: 1,
+                opacity: 0.5,
+                dashArray: '2, 2'
+              }).addTo(featuresLabels);
+            }
+
+            // Create label
+            const label = L.marker(labelPos, {
+              icon: L.divIcon({
+                html: `<div style="background: white; padding: 4px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; border: 1px solid #6B4423; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">${props.name}</div>`,
+                iconSize: [null, null],
+                className: 'feature-label'
+              })
+            }).addTo(featuresLabels);
+          });
+        });
+
+      // Load arboretum parcels - DARK BLUE COLOR
+      fetch('maps/geojson/arboretum-parcels.geojson')
+        .then(response => response.json())
+        .then(data => {
+          parcelsLayer = L.geoJSON(data, {
+            style: {
+              color: '#2C5AA0',
+              weight: 2.5,
+              opacity: 0.8,
+              fillColor: '#2C5AA0',
+              fillOpacity: 0.2
+            }
+          }).addTo(mapInstance);
+
+          // Add labels with leader lines - ONLY for Residence
+          parcelsLabels = L.featureGroup().addTo(mapInstance);
+          parcelLabels = [];
+
+          data.features.forEach(feature => {
+            const props = feature.properties;
+
+            // Skip labels for Arboretum Parcel #1 and #2
+            if (props.name.includes('Arboretum Parcel')) {
+              return;
+            }
+
+            const center = getPolygonCenter(feature.geometry.coordinates);
+
+            // Find non-overlapping position
+            const labelPos = findNonOverlappingPosition(center, parcelLabels);
+            parcelLabels.push(labelPos);
+
+            // Draw leader line if label moved
+            const distance = Math.sqrt(
+              Math.pow(labelPos[0] - center[0], 2) +
+              Math.pow(labelPos[1] - center[1], 2)
+            );
+            if (distance > 0.00001) {
+              L.polyline([center, labelPos], {
+                color: '#2C5AA0',
+                weight: 1,
+                opacity: 0.5,
+                dashArray: '2, 2'
+              }).addTo(parcelsLabels);
+            }
+
+            // Create label
+            const label = L.marker(labelPos, {
+              icon: L.divIcon({
+                html: `<div style="background: white; padding: 4px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; border: 1px solid #2C5AA0; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">${props.name}</div>`,
+                iconSize: [null, null],
+                className: 'parcel-label'
+              })
+            }).addTo(parcelsLabels);
+          });
+        });
+
+      // Load plant observations
+      fetch('data/plant-accessions.json')
+        .then(response => response.json())
+        .then(data => {
+          allObservations = data.accessions || [];
+          document.getElementById('obs-count').textContent = allObservations.length;
+
+          // Create observation markers
+          const observationPoints = allObservations
+            .filter(acc => acc.latitude && acc.longitude)
+            .map(acc => ({
+              type: 'Feature',
+              properties: acc,
+              geometry: {
+                type: 'Point',
+                coordinates: [acc.longitude, acc.latitude]
+              }
+            }));
+
+          if (observationPoints.length > 0) {
+            const featureCollection = {
+              type: 'FeatureCollection',
+              features: observationPoints
+            };
+
+            observationsLayer = L.geoJSON(featureCollection, {
+              pointToLayer: (feature, latlng) => {
+                const marker = L.circleMarker(latlng, {
+                  radius: 6,
+                  fillColor: '#2196F3',
+                  color: '#1565C0',
+                  weight: 2,
+                  opacity: 0.8,
+                  fillOpacity: 0.7
+                });
+
+                const props = feature.properties;
+                const popupContent = `
+                  <div style="font-family: 'DM Sans', sans-serif; width: 200px;">
+                    <strong>${props.scientific_name || 'Unknown'}</strong><br>
+                    ${props.common_name ? '<em>' + props.common_name + '</em><br>' : ''}
+                    <small style="color: #666;">
+                      ID: ${props.accession_id}<br>
+                      Observed: ${props.observed_date}<br>
+                      Observer: ${props.observer}
+                    </small>
+                    ${props.photos && props.photos.length > 0 ? `<br><a href="${props.inaturalist_url}" target="_blank" style="color: #4a7c7e; text-decoration: none;">View on iNaturalist →</a>` : ''}
+                  </div>
+                `;
+
+                marker.bindPopup(popupContent);
+                return marker;
+              }
+            }).addTo(mapInstance);
+          }
+        });
+
+      // Layer toggles
+      document.getElementById('trail-toggle').addEventListener('change', (e) => {
+        if (trailLayer) {
+          if (e.target.checked) {
+            mapInstance.addLayer(trailLayer);
+          } else {
+            mapInstance.removeLayer(trailLayer);
+          }
+        }
+      });
+
+      document.getElementById('boundary-toggle').addEventListener('change', (e) => {
+        if (boundaryLayer) {
+          if (e.target.checked) {
+            mapInstance.addLayer(boundaryLayer);
+          } else {
+            mapInstance.removeLayer(boundaryLayer);
+          }
+        }
+      });
+
+      document.getElementById('observations-toggle').addEventListener('change', (e) => {
+        if (observationsLayer) {
+          if (e.target.checked) {
+            mapInstance.addLayer(observationsLayer);
+          } else {
+            mapInstance.removeLayer(observationsLayer);
+          }
+        }
+      });
+
+      document.getElementById('features-toggle').addEventListener('change', (e) => {
+        if (featuresLayer) {
+          if (e.target.checked) {
+            mapInstance.addLayer(featuresLayer);
+            mapInstance.addLayer(featuresLabels);
+          } else {
+            mapInstance.removeLayer(featuresLayer);
+            mapInstance.removeLayer(featuresLabels);
+          }
+        }
+      });
+
+      document.getElementById('parcels-toggle').addEventListener('change', (e) => {
+        if (parcelsLayer) {
+          if (e.target.checked) {
+            mapInstance.addLayer(parcelsLayer);
+            mapInstance.addLayer(parcelsLabels);
+          } else {
+            mapInstance.removeLayer(parcelsLayer);
+            mapInstance.removeLayer(parcelsLabels);
+          }
+        }
+      });
+    }
+
+    // Initialize when page loads
+    initMap();
+  </script>
+</body>
+</html>
