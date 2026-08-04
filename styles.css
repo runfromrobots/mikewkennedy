@@ -932,6 +932,13 @@ a.case-card:hover { border-color: var(--teal); }
   max-width: 60ch;
 }
 
+.cs-signature {
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+  margin-top: var(--cds-spacing-04);
+  margin-bottom: var(--cds-spacing-07);
+}
+
 .cs-nav-footer {
   display: flex;
   justify-content: space-between;
