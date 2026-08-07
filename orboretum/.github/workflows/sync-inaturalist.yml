@@ -1,0 +1,29 @@
+name: Sync iNaturalist Data
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run iNaturalist sync
+        run: python .github/scripts/sync_inaturalist.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/plant-accessions.json
+          git commit -m "Update plant accessions from iNaturalist" || true
+          git push

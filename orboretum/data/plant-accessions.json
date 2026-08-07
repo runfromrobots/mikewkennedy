@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "name": "The Orboretum Plant Collection",
+    "description": "Living plant collection documented via iNaturalist",
+    "last_updated": "2026-08-04T17:36:19.327224",
+    "place_id": 237476,
+    "place_url": "https://www.inaturalist.org/places/237476",
+    "total_accessions": 13
+  },
+  "accessions": [
+    {
+      "accession_id": "ORB-388006345",
+      "inaturalist_id": 388006345,
+      "inaturalist_url": "https://www.inaturalist.org/observations/388006345",
+      "common_name": "box elder",
+      "scientific_name": "Acer negundo",
+      "taxa_rank": "species",
+      "observed_date": "2026-08-03",
+      "added_date": "2026-08-04T17:36:18.777166",
+      "latitude": 42.884727478,
+      "longitude": -74.4424057007,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [],
+      "description": null,
+      "quality_grade": "casual"
+    },
+    {
+      "accession_id": "ORB-379714744",
+      "inaturalist_id": 379714744,
+      "inaturalist_url": "https://www.inaturalist.org/observations/379714744",
+      "common_name": "dark green bulrush",
+      "scientific_name": "Scirpus atrovirens",
+      "taxa_rank": "species",
+      "observed_date": "2026-07-08",
+      "added_date": "2026-08-04T17:36:18.777202",
+      "latitude": 42.8871650696,
+      "longitude": -74.4413452148,
+      "place_guess": "Montgomery County, US-NY, US",
+      "observer": "mudportal",
+      "photos": [],
+      "description": null,
+      "quality_grade": "casual"
+    },
+    {
+      "accession_id": "ORB-379542215",
+      "inaturalist_id": 379542215,
+      "inaturalist_url": "https://www.inaturalist.org/observations/379542215",
+      "common_name": "Marsh Thistle",
+      "scientific_name": "Cirsium palustre",
+      "taxa_rank": "species",
+      "observed_date": "2026-07-08",
+      "added_date": "2026-08-04T17:36:18.777209",
+      "latitude": 42.8871765137,
+      "longitude": -74.4413146973,
+      "place_guess": "Montgomery County, US-NY, US",
+      "observer": "mudportal",
+      "photos": [],
+      "description": null,
+      "quality_grade": "casual"
+    },
+    {
+      "accession_id": "ORB-375229990",
+      "inaturalist_id": 375229990,
+      "inaturalist_url": "https://www.inaturalist.org/observations/375229990",
+      "common_name": "creeping Jenny",
+      "scientific_name": "Lysimachia nummularia",
+      "taxa_rank": "species",
+      "observed_date": "2026-06-25",
+      "added_date": "2026-08-04T17:36:18.777214",
+      "latitude": 42.8862419128,
+      "longitude": -74.4412231445,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/686106763/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/686106763/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/686106763/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "research"
+    },
+    {
+      "accession_id": "ORB-374690570",
+      "inaturalist_id": 374690570,
+      "inaturalist_url": "https://www.inaturalist.org/observations/374690570",
+      "common_name": "Scarlet Beebalm",
+      "scientific_name": "Monarda didyma",
+      "taxa_rank": "species",
+      "observed_date": "2026-06-23",
+      "added_date": "2026-08-04T17:36:18.777221",
+      "latitude": 42.8846664429,
+      "longitude": -74.4424438477,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/686106762/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/686106762/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/686106762/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    },
+    {
+      "accession_id": "ORB-314812118",
+      "inaturalist_id": 314812118,
+      "inaturalist_url": "https://www.inaturalist.org/observations/314812118",
+      "common_name": "New England aster",
+      "scientific_name": "Symphyotrichum novae-angliae",
+      "taxa_rank": "species",
+      "observed_date": "2025-09-18",
+      "added_date": "2026-08-04T17:36:18.777229",
+      "latitude": 42.8846740723,
+      "longitude": -74.4423675537,
+      "place_guess": "Montgomery County, US-NY, US",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/569732896/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/569732896/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/569732896/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "research"
+    },
+    {
+      "accession_id": "ORB-310565128",
+      "inaturalist_id": 310565128,
+      "inaturalist_url": "https://www.inaturalist.org/observations/310565128",
+      "common_name": "broadleaf cattail",
+      "scientific_name": "Typha latifolia",
+      "taxa_rank": "species",
+      "observed_date": "2025-08-31",
+      "added_date": "2026-08-04T17:36:18.777238",
+      "latitude": 42.8843383789,
+      "longitude": -74.4463577271,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/561609512/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/561609512/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/561609512/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    },
+    {
+      "accession_id": "ORB-309830554",
+      "inaturalist_id": 309830554,
+      "inaturalist_url": "https://www.inaturalist.org/observations/309830554",
+      "common_name": "woolgrass",
+      "scientific_name": "Scirpus cyperinus",
+      "taxa_rank": "species",
+      "observed_date": "2025-08-28",
+      "added_date": "2026-08-04T17:36:18.777250",
+      "latitude": 42.8837890625,
+      "longitude": -74.4473495483,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/559800832/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/559800832/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/559800832/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "research"
+    },
+    {
+      "accession_id": "ORB-305502243",
+      "inaturalist_id": 305502243,
+      "inaturalist_url": "https://www.inaturalist.org/observations/305502243",
+      "common_name": "riverbank grape",
+      "scientific_name": "Vitis riparia",
+      "taxa_rank": "species",
+      "observed_date": "2025-08-11",
+      "added_date": "2026-08-04T17:36:18.777258",
+      "latitude": 42.8850097656,
+      "longitude": -74.4412155151,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/550836769/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/550836769/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/550836769/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    },
+    {
+      "accession_id": "ORB-304731751",
+      "inaturalist_id": 304731751,
+      "inaturalist_url": "https://www.inaturalist.org/observations/304731751",
+      "common_name": "purple loosestrife",
+      "scientific_name": "Lythrum salicaria",
+      "taxa_rank": "species",
+      "observed_date": "2025-08-08",
+      "added_date": "2026-08-04T17:36:18.777263",
+      "latitude": 42.8846435547,
+      "longitude": -74.4423599243,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/549834672/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/549834672/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/549834672/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "research"
+    },
+    {
+      "accession_id": "ORB-294302916",
+      "inaturalist_id": 294302916,
+      "inaturalist_url": "https://www.inaturalist.org/observations/294302916",
+      "common_name": "prickly sowthistle",
+      "scientific_name": "Sonchus asper",
+      "taxa_rank": "species",
+      "observed_date": "2025-07-01",
+      "added_date": "2026-08-04T17:36:18.777269",
+      "latitude": 42.8846740723,
+      "longitude": -74.4423446655,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/530973316/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/530973316/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/530973316/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    },
+    {
+      "accession_id": "ORB-293178931",
+      "inaturalist_id": 293178931,
+      "inaturalist_url": "https://www.inaturalist.org/observations/293178931",
+      "common_name": "bird's-foot trefoil",
+      "scientific_name": "Lotus corniculatus",
+      "taxa_rank": "species",
+      "observed_date": "2025-06-27",
+      "added_date": "2026-08-04T17:36:18.777274",
+      "latitude": 42.8846435547,
+      "longitude": -74.4423446655,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/527804184/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/527804184/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/527804184/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    },
+    {
+      "accession_id": "ORB-240814106",
+      "inaturalist_id": 240814106,
+      "inaturalist_url": "https://www.inaturalist.org/observations/240814106",
+      "common_name": "geraniums and cranesbills",
+      "scientific_name": "Geranium",
+      "taxa_rank": "genus",
+      "observed_date": "2024-09-09",
+      "added_date": "2026-08-04T17:36:18.777280",
+      "latitude": 42.884765625,
+      "longitude": -74.4422683716,
+      "place_guess": "Sprakers",
+      "observer": "mudportal",
+      "photos": [
+        {
+          "url": "https://static.inaturalist.org/photos/429737764/medium.jpg",
+          "square_url": "https://static.inaturalist.org/photos/429737764/square.jpg",
+          "original_url": "https://static.inaturalist.org/photos/429737764/original.jpg"
+        }
+      ],
+      "description": null,
+      "quality_grade": "needs_id"
+    }
+  ]
+}
