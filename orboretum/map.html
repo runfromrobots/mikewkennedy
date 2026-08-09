@@ -349,6 +349,7 @@
         .then(response => response.json())
         .then(data => {
           boundaryLayer = L.geoJSON(data, {
+            interactive: false,
             style: {
               color: '#4a7c7e',
               weight: 3.5,
@@ -364,6 +365,7 @@
         .then(response => response.json())
         .then(data => {
           featuresLayer = L.geoJSON(data, {
+            interactive: false,
             style: {
               color: '#6B4423',
               weight: 2,
@@ -420,6 +422,7 @@
         .then(response => response.json())
         .then(data => {
           parcelsLayer = L.geoJSON(data, {
+            interactive: false,
             style: {
               color: '#2C5AA0',
               weight: 2.5,
