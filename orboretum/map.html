@@ -322,6 +322,10 @@
     function initMap() {
       mapInstance = L.map('map').setView([42.886, -74.441], 15);
 
+      // Create a custom pane for observations so they stay on top
+      mapInstance.createPane('observations-pane');
+      mapInstance.getPane('observations-pane').style.zIndex = 650;
+
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 19
@@ -494,6 +498,7 @@
             };
 
             observationsLayer = L.geoJSON(featureCollection, {
+              pane: 'observations-pane',
               pointToLayer: (feature, latlng) => {
                 const marker = L.circleMarker(latlng, {
                   radius: 6,
