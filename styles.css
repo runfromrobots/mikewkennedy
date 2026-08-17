@@ -282,8 +282,6 @@ a { color: var(--teal-deep); }
   height: 88%;
   object-fit: cover;
   border-radius: var(--radius);
-  opacity: 0;
-  animation: photo-in 0.5s ease-out 0.1s forwards;
 }
 
 .hero-photo-accent {
@@ -295,15 +293,11 @@ a { color: var(--teal-deep); }
   object-fit: cover;
   border-radius: var(--radius);
   z-index: 2;
-  opacity: 0;
-  animation: photo-in 0.5s ease-out 0.4s forwards;
 }
 
 .hero-photo-blob {
   border-radius: 62% 38% 35% 65% / 58% 32% 68% 42%;
 }
-
-@keyframes photo-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ============================================
    Section rhythm
@@ -976,30 +970,13 @@ a.case-card:hover { border-color: var(--teal); }
 
 /* ============================================
    Effects
-   One restrained signature touch: a slow scan sweep across the hero
-   photos. Everything louder (heading glow, gradient blobs, scanline
-   texture, hover glitch) was tried and removed in favor of a calmer,
-   simpler surface — flat color, clean type, one accent.
+   No animated effects: heading glow, gradient blobs, scanline texture,
+   hover glitch, and the hero photo scan sweep were all tried and
+   removed in favor of a calmer, fully static surface.
    ============================================ */
 .hero-photo-main,
 .hero-photo-accent {
   border: 2px solid var(--teal);
-}
-
-/* Slow CRT-style scan sweep across the hero photos — the one effect kept */
-.hero-photos::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to bottom, transparent, rgba(34, 229, 255, 0.08), transparent);
-  animation: scan-sweep 6s linear infinite;
-  pointer-events: none;
-}
-@keyframes scan-sweep {
-  0% { top: -40%; }
-  100% { top: 100%; }
 }
 
 /* ============================================
