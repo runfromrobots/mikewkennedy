@@ -299,6 +299,10 @@ a { color: var(--teal-deep); }
   animation: photo-in 0.5s ease-out 0.4s forwards;
 }
 
+.hero-photo-blob {
+  border-radius: 62% 38% 35% 65% / 58% 32% 68% 42%;
+}
+
 @keyframes photo-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ============================================
