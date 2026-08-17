@@ -299,6 +299,16 @@ a { color: var(--teal-deep); }
   border-radius: 62% 38% 35% 65% / 58% 32% 68% 42%;
 }
 
+.hero-photo-spiky {
+  border-radius: 0;
+  border: none;
+  clip-path: polygon(
+    18% 0%, 55% 8%, 82% 0%, 100% 22%, 92% 50%, 100% 75%,
+    78% 100%, 45% 88%, 15% 100%, 0% 68%, 8% 40%, 0% 12%
+  );
+  filter: drop-shadow(0 0 0 var(--teal)) drop-shadow(0 0 1.5px var(--teal));
+}
+
 /* ============================================
    Section rhythm
    ============================================ */
