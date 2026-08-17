@@ -15,9 +15,9 @@
   --heading: #2EE6FF;
   --header-bg: rgba(8, 9, 13, 0.88);
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
 
   --wrap: 1120px;
   --radius: 3px;
@@ -38,12 +38,16 @@
   --cds-spacing-12: 6rem;     /* 96px */
   --cds-spacing-13: 10rem;    /* 160px */
 
-  /* Carbon type scale, mapped onto this site's existing font families */
-  --cds-caption-01: 1.125rem;
-  --cds-body-compact-01: 1.1875rem;
-  --cds-body-01: 1.1875rem;
+  /* Carbon type scale, mapped onto this site's existing font families.
+     A deliberately stepped hierarchy: each level below is a clear,
+     consistent size down from the one above it, instead of the
+     previous scale where captions, body text, and h3 had all drifted
+     to within 0.125rem of each other. */
+  --cds-caption-01: 0.875rem;
+  --cds-body-compact-01: 1.125rem;
+  --cds-body-01: 1.125rem;
   --cds-body-02: 1.125rem;
-  --cds-heading-03: 1.25rem;
+  --cds-heading-03: 1.375rem;
 
   /* Carbon motion */
   --cds-duration-fast-02: 110ms;
@@ -53,10 +57,10 @@
 }
 
 /* This site has one theme only — the dark palette above, single cyan
-   accent, IBM Plex Mono for labels. There is no light mode and no
+   accent, Space Mono for labels. There is no light mode and no
    prefers-color-scheme switch. Deliberately calm: no gradient blobs,
-   heading glow, scanline texture, or hover glitch — see the Effects
-   block near the end of this file for the one signature touch kept. */
+   heading glow, scanline texture, hover glitch, or animation of any
+   kind — see the Effects block near the end of this file. */
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -84,8 +88,8 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.2rem, 4.2vw, 3.6rem); line-height: 1.08; font-weight: 400; }
-h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.08; font-weight: 400; }
+h2 { font-size: clamp(1.75rem, 2.4vw, 2.25rem); }
 h3 { font-size: var(--cds-heading-03); }
 
 p { margin: 0 0 1em; color: var(--ink-soft); }
@@ -402,15 +406,15 @@ a { color: var(--teal-deep); }
   padding-top: var(--cds-spacing-01);
 }
 .log-company {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 500;
-  font-size: 1.125rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--teal-deep);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .log-date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-weight: 400;
   font-size: var(--cds-caption-01);
   color: var(--ink-soft);
