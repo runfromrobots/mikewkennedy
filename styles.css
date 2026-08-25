@@ -181,6 +181,29 @@ a { color: var(--teal-deep); }
   color: var(--teal-deep);
 }
 
+.nav-toggle {
+  display: none;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+}
+
 /* ============================================
    Buttons
    ============================================ */
@@ -303,14 +326,8 @@ a { color: var(--teal-deep); }
   border-radius: 62% 38% 35% 65% / 58% 32% 68% 42%;
 }
 
-.hero-photo-spiky {
-  border-radius: 0;
-  border: none;
-  clip-path: polygon(
-    18% 0%, 55% 8%, 82% 0%, 100% 22%, 92% 50%, 100% 75%,
-    78% 100%, 45% 88%, 15% 100%, 0% 68%, 8% 40%, 0% 12%
-  );
-  filter: drop-shadow(0 0 0 var(--teal)) drop-shadow(0 0 1.5px var(--teal));
+.hero-photo-blob-accent {
+  border-radius: 42% 58% 60% 40% / 48% 42% 58% 52%;
 }
 
 /* ============================================
@@ -980,6 +997,21 @@ a.case-card:hover { border-color: var(--teal); }
   .toolkit-grid-4 { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .site-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .site-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    justify-content: flex-start;
+    gap: var(--cds-spacing-04);
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: var(--cds-spacing-04) var(--cds-spacing-05);
+  }
 }
 
 /* ============================================
@@ -996,21 +1028,64 @@ a.case-card:hover { border-color: var(--teal); }
 /* ============================================
    Site banner (points to the "how this site was made" write-up)
    ============================================ */
+/* Collapsed to a small pill by default so its fixed position can't
+   meaningfully cover content beneath it; expands on hover, keyboard
+   focus, or tap. */
 .site-banner {
   position: fixed;
-  left: var(--cds-spacing-05);
+  right: var(--cds-spacing-05);
   bottom: var(--cds-spacing-05);
   z-index: 30;
   display: flex;
   align-items: center;
   gap: var(--cds-spacing-04);
-  max-width: 360px;
+  width: 44px;
+  height: 44px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--cds-duration-fast-02) var(--cds-easing-standard),
+              width var(--cds-duration-fast-02) var(--cds-easing-standard),
+              border-radius var(--cds-duration-fast-02) var(--cds-easing-standard);
+}
+.site-banner.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  overflow: hidden;
+  white-space: nowrap;
   background: rgba(18, 20, 27, 0.95);
   backdrop-filter: blur(8px);
   border: 1px solid var(--teal);
+  border-radius: 999px;
+  transition: width var(--cds-duration-fast-02) var(--cds-easing-standard),
+              border-radius var(--cds-duration-fast-02) var(--cds-easing-standard);
+}
+.site-banner.is-open,
+.site-banner:hover,
+.site-banner:focus-within {
+  width: 340px;
+  max-width: calc(100vw - 2 * var(--cds-spacing-05));
+  height: auto;
+  min-height: 44px;
+  white-space: normal;
+  align-items: center;
   border-radius: var(--radius);
-  box-shadow: 0 0 24px rgba(34, 229, 255, 0.2);
-  padding: var(--cds-spacing-04) var(--cds-spacing-05);
+  padding: var(--cds-spacing-02) 0;
+}
+.site-banner-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--teal-deep);
+  cursor: pointer;
+  padding: 0;
 }
 .site-banner-link {
   font-family: var(--font-mono);
@@ -1018,12 +1093,15 @@ a.case-card:hover { border-color: var(--teal); }
   color: var(--ink);
   text-decoration: none;
   line-height: 1.4;
+  flex: 1;
+  min-width: 0;
 }
 .site-banner-link:hover { color: var(--teal-deep); }
 .site-banner-close {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
+  margin-right: var(--cds-spacing-04);
   border-radius: 50%;
   border: 1px solid var(--line);
   background: transparent;
@@ -1036,11 +1114,3 @@ a.case-card:hover { border-color: var(--teal); }
   justify-content: center;
 }
 .site-banner-close:hover { color: var(--ink); border-color: var(--teal); }
-
-@media (max-width: 672px) {
-  .site-banner {
-    left: var(--cds-spacing-04);
-    right: var(--cds-spacing-04);
-    max-width: none;
-  }
-}

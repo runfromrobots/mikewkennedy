@@ -1,5 +1,30 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Mobile nav toggle
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+  });
+})();
+
 // Highlight the active nav link based on scroll position
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.site-nav a');
@@ -66,10 +91,26 @@ document.querySelectorAll('.cs-carousel').forEach((carousel) => {
   const banner = document.createElement('div');
   banner.className = 'site-banner';
   banner.innerHTML = `
+    <button type="button" class="site-banner-icon" aria-label="Curious how this site was built?" aria-expanded="false">?</button>
     <a href="${articleHref}" class="site-banner-link">Curious how this site was built? Read the write-up &rarr;</a>
     <button type="button" class="site-banner-close" aria-label="Dismiss">&times;</button>
   `;
   document.body.appendChild(banner);
+
+  function revealOnScroll() {
+    if (window.scrollY > 300) {
+      banner.classList.add('is-visible');
+      window.removeEventListener('scroll', revealOnScroll);
+    }
+  }
+  window.addEventListener('scroll', revealOnScroll, { passive: true });
+  revealOnScroll();
+
+  const icon = banner.querySelector('.site-banner-icon');
+  icon.addEventListener('click', () => {
+    const open = banner.classList.toggle('is-open');
+    icon.setAttribute('aria-expanded', String(open));
+  });
 
   banner.querySelector('.site-banner-close').addEventListener('click', () => {
     banner.remove();
