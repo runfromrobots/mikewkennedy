@@ -85,8 +85,8 @@ document.querySelectorAll('.cs-carousel').forEach((carousel) => {
   if (path.endsWith('how-this-site-was-made.html')) return;
   if (localStorage.getItem('mk-site-banner-dismissed') === 'true') return;
 
-  const inCaseStudies = path.includes('/case-studies/');
-  const articleHref = (inCaseStudies ? '../' : '') + 'how-this-site-was-made.html';
+  const inSubdir = path.includes('/case-studies/') || path.includes('/for/');
+  const articleHref = (inSubdir ? '../' : '') + 'how-this-site-was-made.html';
 
   const banner = document.createElement('div');
   banner.className = 'site-banner';
