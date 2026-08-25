@@ -1033,45 +1033,42 @@ a.case-card:hover { border-color: var(--teal); }
 /* Collapsed to a small pill by default so its fixed position can't
    meaningfully cover content beneath it; expands on hover, keyboard
    focus, or tap. */
+/* The box is always laid out at its full expanded footprint (fixed
+   width, icon pinned to the true right edge via row-reverse) so the
+   expand/collapse never animates width/height (layout-thrashing
+   properties) — only clip-path, a compositor-only property. */
 .site-banner {
   position: fixed;
   right: var(--cds-spacing-05);
   bottom: var(--cds-spacing-05);
   z-index: 30;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: var(--cds-spacing-04);
-  width: 44px;
-  height: 44px;
+  width: 340px;
+  max-width: calc(100vw - 2 * var(--cds-spacing-05));
+  min-height: 44px;
+  padding: var(--cds-spacing-02) 0;
+  border-radius: 999px;
   opacity: 0;
   pointer-events: none;
+  clip-path: circle(22px at calc(100% - 22px) 26px);
   transition: opacity var(--cds-duration-fast-02) var(--cds-easing-standard),
-              width var(--cds-duration-fast-02) var(--cds-easing-standard),
-              border-radius var(--cds-duration-fast-02) var(--cds-easing-standard);
+              clip-path var(--cds-duration-fast-02) var(--cds-easing-standard);
 }
 .site-banner.is-visible {
   opacity: 1;
   pointer-events: auto;
   overflow: hidden;
-  white-space: nowrap;
   background: rgba(18, 20, 27, 0.95);
   backdrop-filter: blur(8px);
   border: 1px solid var(--teal);
-  border-radius: 999px;
-  transition: width var(--cds-duration-fast-02) var(--cds-easing-standard),
-              border-radius var(--cds-duration-fast-02) var(--cds-easing-standard);
 }
 .site-banner.is-open,
 .site-banner:hover,
 .site-banner:focus-within {
-  width: 340px;
-  max-width: calc(100vw - 2 * var(--cds-spacing-05));
-  height: auto;
-  min-height: 44px;
-  white-space: normal;
-  align-items: center;
-  border-radius: var(--radius);
-  padding: var(--cds-spacing-02) 0;
+  clip-path: circle(500px at calc(100% - 22px) 26px);
 }
 .site-banner-icon {
   flex-shrink: 0;
