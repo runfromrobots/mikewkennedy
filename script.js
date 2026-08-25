@@ -97,8 +97,17 @@ document.querySelectorAll('.cs-carousel').forEach((carousel) => {
   `;
   document.body.appendChild(banner);
 
+  // On narrow viewports the collapsed pill's 44px footprint can still land
+  // on top of body text at an arbitrary scroll depth (there's no safe
+  // margin outside the reading column), so mobile waits until the footer
+  // is in view instead of a fixed scroll distance.
+  const isMobile = window.matchMedia('(max-width: 672px)').matches;
+
   function revealOnScroll() {
-    if (window.scrollY > 300) {
+    const ready = isMobile
+      ? window.scrollY + window.innerHeight >= document.body.scrollHeight - 400
+      : window.scrollY > 300;
+    if (ready) {
       banner.classList.add('is-visible');
       window.removeEventListener('scroll', revealOnScroll);
     }
