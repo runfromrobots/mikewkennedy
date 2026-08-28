@@ -78,8 +78,63 @@ section {
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--forest-900) 0%, var(--forest-800) 100%);
+  position: relative;
   color: white;
+  padding: 6rem 0;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0s ease-in-out;
+}
+
+.hero-image.active {
+  opacity: 1;
+  animation: fadeInOut 8s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
   padding: 4rem 0;
 }
 
