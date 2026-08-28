@@ -1,6 +1,6 @@
 # Project: Michael Kennedy (MK) Portfolio Site
 
-Personal portfolio/resume site for Michael Kennedy, a UX Research Leader (13+ years) targeting Senior/Lead-level UX Research roles, fully remote. The site's self-description headline is "UX Research Leader" (chosen over "Senior UX Researcher"), with the About copy naming past titles: Principal UX Researcher, UX Designer / Researcher, and UX Research Operations specialist. Static site, no build step, no framework.
+Personal portfolio/resume site for Michael Kennedy, a Lead UX Researcher + AI Methodologist (14+ years) targeting Senior/Lead-level UX Research roles, fully remote. The site's self-description headline is "Lead UX Researcher + AI Methodologist" (updated from "UX Research Leader" to match a later resume revision), with the About copy naming past titles: Principal UX Researcher, UX Designer / Researcher, and UX Research Operations specialist. Static site, no build step, no framework.
 
 ## Stack
 
@@ -51,12 +51,14 @@ Real:
 
 * Name, title, years of experience, degrees, certifications
 * Company history/order in the Experience section
-* Toolkit tool list (pulled from the actual live site: UserTesting, UserZoom, Userlytics, User Interviews, Maze, Qualtrics, Optimal Workshop, SurveyMonkey, SurveyGizmo, dScout, Ethnio, ProvenByUsers, Respondent, Pendo, Figma, Miro, Mural, Sketch, plus Claude/NotebookLM/Dovetail/Great Question for AI-enabled synthesis)
+* Toolkit tool list (pulled from the actual live site: UserTesting, UserZoom, Userlytics, User Interviews, Maze, Qualtrics, Optimal Workshop, SurveyMonkey, SurveyGizmo, dScout, Ethnio, ProvenByUsers, Respondent, Pendo, Figma, Miro, Mural, Sketch, IBM Carbon Design System, GitHub, plus Claude/NotebookLM/Dovetail/Great Question for AI-enabled synthesis). GitHub's logo (images/logos/github.png) needed the same black-shape-on-white-background treatment as Veracode's: recolored to `--ink` with luminance mapped to alpha, so it reads correctly against the dark theme.
 * Footer quote from C. Todd Lombardo (from the live site)
 * Email (mikewkennedy@gmail.com), phone number (+1 (617) 803-5041), and LinkedIn (https://www.linkedin.com/in/mikewkennedy)
 * Testimonials (Scott Williams, Marek Glinski, Thomas Mackey — real quotes and names, pulled from the live site)
 * resume.pdf (real file, sourced from Michael's actual resume)
-* Experience section titles, dates, and role descriptions (real, pulled from Michael's actual resume)
+* Experience section titles, dates, and role descriptions (real, pulled from Michael's actual resume). A "Leadership & Management Development" entry (Nielsen Norman Group & Eager Labs, Jan 2023 – Oct 2023, no logo) sits between RCG Global Services and SecurityScorecard, covering an NN/g UX Management Certificate and Eager Labs' invite-only Emerging Leaders program — a resume-driven addition, not an employer in the usual sense, so it has no `.log-logo` image.
+* Credentials list (About section) has 8 items, expanded from an earlier 4 to match a later resume revision: the two degrees, NN/g UX Management Certification, Enterprise Design Thinking Certification (IBM Security), Graphic Design Specialization (CalArts), Experience Mapping Workshop (Adaptive Path UXWeek), Gamification/Kevin Werbach (UPenn), and a co-author/Author & Speaker credit for "You Want Me to What? A Practical Guide to Diary Studies" (UXPA International Conference).
+* Hero h1 tagline reads "I turn observations into findings and insights into decisions your team can act on." (an earlier, shorter version read "I turn scattered signals into decisions your team can act on.") — don't shorten it back without being asked.
 * Employer logos in Experience (images/logos/) and toolkit logos in Toolkit, sourced from each company's own site (or Wikimedia Commons where a direct fetch wasn't possible), full color, on a `.log-logo` / `.tool-chip` + `.tool-logo` pattern. SurveyGizmo has no logo (Alchemer's site blocks automated fetches) — it's still a plain text chip. Veracode's logo SVG had a near-black shape (`fill:#0d1117`) that was invisible against the dark theme background — recolored to `--ink` (`#E4F6F8`) so both halves of the logo show.
 * Headshot (images/headshot.jpg) — real photo, displayed in the About section via object-fit: cover with a gradient fallback if ever removed
 * Hero photos (images/dogs-office.jpg, images/taiwan-team.jpg) — real photos forming the hero's photo collage (see Design system above); images/ibm-research.jpg and images/hero-photo.jpg are real photos but currently unused anywhere
