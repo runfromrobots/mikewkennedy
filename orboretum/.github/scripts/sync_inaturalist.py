@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Sync iNaturalist observations to plant accessions database.
-Pulls observations from The Orboretum place and stores them as accessions.
+Pulls observations from Root Arboretum place and stores them as accessions.
 """
 
 import json
@@ -11,9 +11,9 @@ from pathlib import Path
 import urllib.request
 import urllib.error
 
-# iNaturalist API endpoint and place ID for The Orboretum
+# iNaturalist API endpoint and place ID for Root Arboretum
 INATURALIST_API = "https://api.inaturalist.org/v1"
-PLACE_ID = 237476  # The Orboretum place ID
+PLACE_ID = 237476  # Root Arboretum place ID
 TAXA_IDS = "47126"  # Plantae taxon ID for filtering to plants only
 
 def fetch_observations(per_page=200, page=1):
@@ -98,7 +98,7 @@ def save_accessions(accessions_list):
 
     data = {
         "metadata": {
-            "name": "The Orboretum Plant Collection",
+            "name": "Root Arboretum Plant Collection",
             "description": "Living plant collection documented via iNaturalist",
             "last_updated": datetime.now().isoformat(),
             "place_id": PLACE_ID,
