@@ -45,6 +45,11 @@ DEPLOY.md                       deployment notes (Netlify/GitHub Pages/Vercel)
 * Also connected to Vercel for auto-deploy on every push to `main`
 * Custom domain mikewkennedy.com is being switched over to this site: the site owner has added the domain in Vercel and created the A/CNAME records with Squarespace (the domain's registrar/DNS host). This repo is now the live-facing site for that domain (previously it pointed at a separate, unrelated site) — DNS changes were made by the site owner directly in the Vercel and Squarespace dashboards, not through this repo.
 
+## Analytics
+
+* Vercel Analytics/Insights (`/_vercel/insights/script.js`, deferred) is loaded on every page — pageview counts only.
+* Microsoft Clarity (session recordings, heatmaps) is also loaded on every page, as early as possible in `<head>` (right after the opening `<head>` tag, before `<meta charset>`), per Clarity's own setup guidance. Project ID `ygneg6dxny` is shared with the `runfromrobots/rip-studio` repo/site deliberately, so both sites' sessions land in one Clarity dashboard rather than two separate ones — don't give this site its own separate Clarity project without being asked.
+
 ## Content status — what's real vs. placeholder
 
 Real:
