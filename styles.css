@@ -454,6 +454,27 @@ a { color: var(--teal-deep); }
 .log-what h3 { margin-bottom: var(--cds-spacing-03); }
 .log-what p { margin-bottom: 0; }
 
+.log-what ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--cds-spacing-03);
+}
+.log-what li {
+  padding-left: 18px;
+  position: relative;
+}
+.log-what li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--teal);
+}
+
 .log-note {
   margin-top: var(--cds-spacing-06);
   font-size: var(--cds-body-compact-01);
@@ -548,6 +569,10 @@ a.case-card:hover { border-color: var(--teal); }
 
 .toolkit-grid-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.toolkit-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .link-cta {
@@ -986,6 +1011,7 @@ a.case-card:hover { border-color: var(--teal); }
    ============================================ */
 @media (max-width: 1056px) {
   .toolkit-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .toolkit-grid-5 { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr; }
 }
 
@@ -997,6 +1023,7 @@ a.case-card:hover { border-color: var(--teal); }
   .log-entry { grid-template-columns: 1fr; gap: 6px; }
   .toolkit-grid { grid-template-columns: 1fr; }
   .toolkit-grid-4 { grid-template-columns: 1fr; }
+  .toolkit-grid-5 { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .site-nav { display: none; }
   .nav-toggle { display: flex; }
