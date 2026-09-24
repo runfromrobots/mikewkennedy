@@ -2,17 +2,18 @@
    Tokens
    ============================================ */
 :root {
-  --navy: #0A2540;
-  --navy-ink: #12233B;
-  --teal: #33CFEA;
-  --teal-deep: #22E5FF;
-  --teal-tint: rgba(34, 229, 255, 0.12);
+  --navy: #49516F;
+  --navy-ink: #383F58;
+  --teal: #496F5D;
+  --teal-deep: #6279B8;
+  --teal-tint: rgba(98, 121, 184, 0.14);
   --paper: #08090D;
   --paper-raised: #12141B;
   --line: #223038;
   --ink: #E4F6F8;
   --ink-soft: #7C99A1;
-  --heading: #2EE6FF;
+  --heading: #8EA4D2;
+  --accent-pop: #4C9F70;
   --header-bg: rgba(8, 9, 13, 0.88);
 
   --font-display: 'Newsreader', Georgia, serif;
@@ -90,7 +91,7 @@ h1, h2, h3 {
 
 h1 { font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.08; font-weight: 400; }
 h2 { font-size: clamp(1.75rem, 2.4vw, 2.25rem); }
-h3 { font-size: var(--cds-heading-03); }
+h3 { font-size: var(--cds-heading-03); color: var(--accent-pop); }
 
 p { margin: 0 0 1em; color: var(--ink-soft); }
 
