@@ -130,8 +130,21 @@ a { color: var(--teal-deep); }
   top: 0;
   z-index: 20;
   background: var(--header-bg);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 0 0 var(--line), 0 12px 24px -16px rgba(0, 0, 0, 0.6);
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--heading) 0%, var(--teal-deep) 45%, var(--accent-pop) 100%);
+  opacity: 0.55;
 }
 
 .header-inner {
@@ -254,10 +267,25 @@ a { color: var(--teal-deep); }
    Hero
    ============================================ */
 .hero {
+  position: relative;
   padding: var(--cds-spacing-12) 0 var(--cds-spacing-10);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 65% 60% at 12% 15%, rgba(142, 164, 210, 0.26) 0%, transparent 72%),
+    radial-gradient(ellipse 60% 55% at 88% 80%, rgba(76, 159, 112, 0.20) 0%, transparent 72%);
+  pointer-events: none;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: var(--cds-spacing-09);
@@ -362,6 +390,7 @@ a { color: var(--teal-deep); }
   background: linear-gradient(160deg, var(--navy) 0%, var(--teal-deep) 100%);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 20px 40px -22px rgba(0, 0, 0, 0.7);
 }
 
 .about-portrait-img {
@@ -534,15 +563,22 @@ a { color: var(--teal-deep); }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 16px 32px -24px rgba(0, 0, 0, 0.7);
 }
 
 a.case-card {
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: border-color var(--cds-duration-fast-02) var(--cds-easing-standard);
+  transition: border-color var(--cds-duration-fast-02) var(--cds-easing-standard),
+              transform var(--cds-duration-fast-02) var(--cds-easing-standard),
+              box-shadow var(--cds-duration-fast-02) var(--cds-easing-standard);
 }
-a.case-card:hover { border-color: var(--teal); }
+a.case-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 36px -20px rgba(0, 0, 0, 0.75);
+}
 
 .case-card-body {
   padding: var(--cds-spacing-07);
@@ -1046,13 +1082,25 @@ a.case-card:hover { border-color: var(--teal); }
 
 /* ============================================
    Effects
-   No animated effects: heading glow, gradient blobs, scanline texture,
-   hover glitch, and the hero photo scan sweep were all tried and
-   removed in favor of a calmer, fully static surface.
+   Still no animation (no glow pulses, scanline, glitch, or scan sweep):
+   the depth below is static — gradients, shadow, a gradient border line.
    ============================================ */
 .hero-photo-main,
 .hero-photo-accent {
   border: 2px solid var(--teal);
+}
+.hero-photo-main {
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(142, 164, 210, 0.12);
+}
+.hero-photo-accent {
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary {
+  box-shadow: 0 8px 20px -8px rgba(98, 121, 184, 0.55);
+}
+.btn-primary:hover {
+  box-shadow: 0 10px 24px -8px rgba(98, 121, 184, 0.7);
 }
 
 /* ============================================
