@@ -4,16 +4,16 @@
 :root {
   --navy: #1B1A19;
   --navy-ink: #121211;
-  --teal: #E2466E;
-  --teal-deep: #E2466E;
-  --teal-tint: rgba(226, 70, 110, 0.14);
+  --teal: #E5587C;
+  --teal-deep: #E5587C;
+  --teal-tint: rgba(229, 88, 124, 0.08);
   --paper: #121211;
   --paper-raised: #1B1A19;
   --line: #36332F;
   --ink: #F2EBDD;
   --ink-soft: #A39C90;
   --heading: #F2EBDD;
-  --accent-pop: #E2466E;
+  --accent-pop: #E5587C;
   --header-bg: rgba(18, 18, 17, 0.88);
 
   --font-display: 'Antonio', 'Arial Narrow', sans-serif;
@@ -279,7 +279,7 @@ a { color: var(--teal-deep); }
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 65% 60% at 12% 15%, rgba(226, 70, 110, 0.22) 0%, transparent 72%),
+    radial-gradient(ellipse 65% 60% at 12% 15%, rgba(229, 88, 124, 0.12) 0%, transparent 72%),
     radial-gradient(ellipse 60% 55% at 88% 80%, rgba(242, 235, 221, 0.08) 0%, transparent 72%);
   pointer-events: none;
 }
@@ -596,7 +596,7 @@ a.case-card:hover {
   color: #fff;
 }
 .contact h2 { color: #fff; }
-.contact p { color: #C9D6E3; }
+.contact p { color: var(--ink-soft); }
 
 .contact-links {
   display: flex;
@@ -689,7 +689,7 @@ a.case-card:hover {
 .contact-phone {
   font-family: var(--font-mono);
   font-size: var(--cds-body-compact-01);
-  color: #C9D6E3;
+  color: var(--ink-soft);
   margin-top: var(--cds-spacing-04);
 }
 .site-footer {
@@ -1092,17 +1092,17 @@ a.case-card:hover {
   border: 2px solid var(--teal);
 }
 .hero-photo-main {
-  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(226, 70, 110, 0.14);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(229, 88, 124, 0.14);
 }
 .hero-photo-accent {
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.6);
 }
 
 .btn-primary {
-  box-shadow: 0 8px 20px -8px rgba(226, 70, 110, 0.55);
+  box-shadow: 0 8px 20px -8px rgba(229, 88, 124, 0.55);
 }
 .btn-primary:hover {
-  box-shadow: 0 10px 24px -8px rgba(226, 70, 110, 0.7);
+  box-shadow: 0 10px 24px -8px rgba(229, 88, 124, 0.7);
 }
 
 /* ============================================
