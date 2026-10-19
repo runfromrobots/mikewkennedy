@@ -18,6 +18,7 @@ ai-stance.html                  Michael's ten-point personal statement on AI use
 images/                         drop images here, reference as images/filename.jpg
 .nojekyll                        present so GitHub Pages serves files as-is
 DEPLOY.md                       deployment notes (Netlify/GitHub Pages/Vercel)
+yatesville-boat-race/           SEPARATE Next.js + Supabase site for the Yatesville Creek Paper Boat Race, not part of the portfolio; own Vercel project (Root Directory = yatesville-boat-race), own README
 ```
 
 ## Design system
