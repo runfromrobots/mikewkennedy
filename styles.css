@@ -57,11 +57,12 @@
   /* Carbon breakpoints: sm 320 / md 672 / lg 1056 / xlg 1312 / max 1584 */
 }
 
-/* This site has one theme only — the dark palette above, single cyan
-   accent, Space Mono for labels. There is no light mode and no
-   prefers-color-scheme switch. Deliberately calm: no gradient blobs,
-   heading glow, scanline texture, hover glitch, or animation of any
-   kind — see the Effects block near the end of this file. */
+/* This site has one theme only — the warm paper/cream palette above,
+   single rose accent, IBM Plex Mono for labels. There is no light mode
+   and no prefers-color-scheme switch. Still no animation of any kind
+   (see the Effects block near the end of this file), but the surface
+   now carries a static paper-grain texture and a touch of halftone/
+   printmaking texture — deliberate, not drift; see Effects. */
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -79,6 +80,21 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   color-scheme: dark;
+}
+
+/* Paper-grain texture: a static noise field over the whole page, giving
+   the flat dark surface a bit of fiber/tooth instead of a flawless
+   digital flatness. Single rendered SVG filter, not animated, not
+   interactive (pointer-events: none) — purely a surface texture. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3 {
@@ -280,7 +296,9 @@ a { color: var(--teal-deep); }
   z-index: 0;
   background:
     radial-gradient(ellipse 65% 60% at 12% 15%, rgba(229, 88, 124, 0.12) 0%, transparent 72%),
-    radial-gradient(ellipse 60% 55% at 88% 80%, rgba(242, 235, 221, 0.08) 0%, transparent 72%);
+    radial-gradient(ellipse 60% 55% at 88% 80%, rgba(242, 235, 221, 0.08) 0%, transparent 72%),
+    radial-gradient(circle, rgba(242, 235, 221, 0.07) 1px, transparent 1.3px);
+  background-size: auto, auto, 7px 7px;
   pointer-events: none;
 }
 
@@ -592,7 +610,9 @@ a.case-card:hover {
    Contact
    ============================================ */
 .contact {
-  background: var(--navy);
+  background-color: var(--navy);
+  background-image: radial-gradient(circle, rgba(242, 235, 221, 0.06) 1px, transparent 1.3px);
+  background-size: 7px 7px;
   color: #fff;
 }
 .contact h2 { color: #fff; }
